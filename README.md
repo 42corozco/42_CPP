@@ -5,7 +5,8 @@
 $ Status =
 	#??
 $ Note =
-	#module-00 = 100
+	module-00 = 100
+	module-01 = 100
 $ Development =
 	# -> ??
 ```
