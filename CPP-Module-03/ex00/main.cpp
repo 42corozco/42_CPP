@@ -5,6 +5,7 @@ int		main(void)
 	FragTrap nani;
 	FragTrap nani2("Quimera");
 
+	srand(time(NULL));
 	nani.takeDAmage(30);
 	nani2.takeDAmage(300);
 	nani.beRepaired(100);

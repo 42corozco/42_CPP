@@ -55,6 +55,7 @@ void	FragTrap::takeDAmage(unsigned int amount)
 {
 	int		res;
 
+	amount = ((int)amount - (int)this->_armorDmg > 0) ? amount - this->_armorDmg : 0;
 	if ((int)this->_hit - (int)amount < 1)
 	{
 		res = (int)this->_maxHit - ((int)this->_maxHit - (int)this->_hit);
@@ -83,3 +84,9 @@ void	FragTrap::beRepaired(unsigned int amount)
 	this->_hit += res;
 	std::cout << "FR4G-TP " << this->_name << " life points : " << this->_hit << std::endl;
 };
+
+void	FragTrap::vaulthunter_dot_exe(std::string const & target)
+{
+
+};
+
