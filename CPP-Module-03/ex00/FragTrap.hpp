@@ -28,7 +28,9 @@ class	FragTrap
 	void	gunAttack(std::string const & target);
 	void	kunaiAttack(std::string const &target);
 
-	std::string   getName(void);
+	std::string		getName(void);
+	unsigned int	getMeleeDmg(void);
+	unsigned int	getRangedDmg(void);
 
 	private:
 	unsigned int	_hit;

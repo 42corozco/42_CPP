@@ -7,11 +7,9 @@ int		main(void)
 
 	
 	frag2.rangedAttack(frag1.getName());
-	frag1.takeDAmage(70);
-	//frag1.takeDAmage(get....);
-	frag1.rangedAttack(frag2.getName());
-	frag2.takeDAmage(30);
-	//frag2.takeDAmage(get....);
+	frag1.takeDAmage(frag2.getRangedDmg());
+	frag1.meleeAttack(frag2.getName());
+	frag2.takeDAmage(frag1.getMeleeDmg());
 	frag1.beRepaired(40);
 	frag2.beRepaired(10);
 	return (0);

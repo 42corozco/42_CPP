@@ -151,5 +151,15 @@ void	FragTrap::kunaiAttack(std::string const &target)
 
 std::string	FragTrap::getName(void)
 {
-    return ( this->_name );
-}
+	return ( this->_name );
+};
+
+unsigned int	FragTrap::getMeleeDmg(void)
+{
+	return ( this->_meleeDmg );
+};
+
+unsigned int	FragTrap::getRangedDmg(void)
+{
+	return ( this->_rangedDmg );
+};
