@@ -17,10 +17,8 @@ class	FragTrap
 	/*functions*/
 	void	rangedAttack(std::string const & target);
 	void	meleeAttack(std::string const & target);
-	/*
 	void	takeDAmage(unsigned int amount);
 	void	beRepaired(unsigned int amount);
-	*/
 
 	private:
 	unsigned int	_hit;
