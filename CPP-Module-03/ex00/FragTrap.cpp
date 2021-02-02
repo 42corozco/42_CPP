@@ -87,6 +87,69 @@ void	FragTrap::beRepaired(unsigned int amount)
 
 void	FragTrap::vaulthunter_dot_exe(std::string const & target)
 {
+	srand(time(NULL));
+	int	res = rand() % 5;
 
+	if ((int)this->_energy - 25 >= 0)
+	{
+		this->_energy -= 25;
+		switch ( res )
+		{
+			case 0:
+				FragTrap::grenadeAttack(target);
+			case 1:
+				FragTrap::shotgunAttack(target);
+			case 2:
+				FragTrap::sniperAttack(target);
+			case 3:
+				FragTrap::gunAttack(target);
+			default:
+				FragTrap::kunaiAttack(target);
+		}
+	}
+	else
+	{
+		std::cout << "Energy points needed: " << 25 - this->_energy << std::endl;
+	}
 };
 
+
+void	FragTrap::grenadeAttack(std::string const & target)
+{
+	std::cout << "FR4G-TP " << this->_name << " attacks "
+		<< target << " at melee, causing " << this->_meleeDmg
+		<< " points of damage!" << std::endl;
+};
+
+void	FragTrap::shotgunAttack(std::string const & target)
+{
+	std::cout << "FR4G-TP " << this->_name << " attacks "
+		<< target << " at melee, causing " << this->_meleeDmg
+		<< " points of damage!" << std::endl;
+};
+
+void	FragTrap::sniperAttack(std::string const & target)
+{
+	std::cout << "FR4G-TP " << this->_name << " attacks "
+		<< target << " at melee, causing " << this->_meleeDmg
+		<< " points of damage!" << std::endl;
+};
+
+void	FragTrap::gunAttack(std::string const & target)
+{
+	std::cout << "FR4G-TP " << this->_name << " attacks "
+		<< target << " at melee, causing " << this->_meleeDmg
+		<< " points of damage!" << std::endl;
+};
+
+void	FragTrap::kunaiAttack(std::string const &target)
+{
+	std::cout << "FR4G-TP " << this->_name << " attacks "
+		<< target << " at melee, causing " << this->_meleeDmg
+		<< " points of damage!" << std::endl;
+};
+
+std::string	FragTrap::getName(void)
+{
+    return ( this->_name );
+}

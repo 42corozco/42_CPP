@@ -2,13 +2,17 @@
 
 int		main(void)
 {
-	FragTrap nani;
-	FragTrap nani2("Quimera");
+	FragTrap frag1("Noah");
+	FragTrap frag2("Quimera");
 
-	srand(time(NULL));
-	nani.takeDAmage(30);
-	nani2.takeDAmage(300);
-	nani.beRepaired(100);
-	nani2.beRepaired(50);
+	
+	frag2.rangedAttack(frag1.getName());
+	frag1.takeDAmage(70);
+	//frag1.takeDAmage(get....);
+	frag1.rangedAttack(frag2.getName());
+	frag2.takeDAmage(30);
+	//frag2.takeDAmage(get....);
+	frag1.beRepaired(40);
+	frag2.beRepaired(10);
 	return (0);
 }

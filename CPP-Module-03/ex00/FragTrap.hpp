@@ -21,6 +21,15 @@ class	FragTrap
 	void	beRepaired(unsigned int amount);
 	void	vaulthunter_dot_exe(std::string const & target);
 
+	/*random functions*/
+	void	grenadeAttack(std::string const & target);
+	void	shotgunAttack(std::string const & target);
+	void	sniperAttack(std::string const & target);
+	void	gunAttack(std::string const & target);
+	void	kunaiAttack(std::string const &target);
+
+	std::string   getName(void);
+
 	private:
 	unsigned int	_hit;
 	unsigned int	_maxHit;
