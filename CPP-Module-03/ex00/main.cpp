@@ -2,7 +2,7 @@
 
 int		main(void)
 {
-	FragTrap frag1("Noah");
+	FragTrap frag1;
 	FragTrap frag2("Quimera");
 
 	

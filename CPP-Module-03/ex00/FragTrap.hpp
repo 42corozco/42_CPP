@@ -21,6 +21,11 @@ class	FragTrap
 	void	beRepaired(unsigned int amount);
 	void	vaulthunter_dot_exe(std::string const & target);
 
+	/*getters*/
+	std::string		getName(void);
+	unsigned int	getMeleeDmg(void);
+	unsigned int	getRangedDmg(void);
+
 	/*random functions*/
 	void	grenadeAttack(std::string const & target);
 	void	shotgunAttack(std::string const & target);
@@ -28,9 +33,12 @@ class	FragTrap
 	void	gunAttack(std::string const & target);
 	void	kunaiAttack(std::string const &target);
 
-	std::string		getName(void);
-	unsigned int	getMeleeDmg(void);
-	unsigned int	getRangedDmg(void);
+	/*getters random*/
+	unsigned int	getGrenadeDmg(void);
+	unsigned int	getShotgunDmg(void);
+	unsigned int	getSniperDmg(void);
+	unsigned int	getGunDmg(void);
+	unsigned int	getKunaiDmg(void);
 
 	private:
 	unsigned int	_hit;
@@ -42,6 +50,12 @@ class	FragTrap
 	unsigned int	_meleeDmg;
 	unsigned int	_rangedDmg;
 	unsigned int	_armorDmg;
+
+	unsigned int	_grenadeDmg;
+	unsigned int	_shotgunDmg;
+	unsigned int	_sniperDmg;
+	unsigned int	_gunDmg;
+	unsigned int	_kunaiDmg;
 };
 
 #endif

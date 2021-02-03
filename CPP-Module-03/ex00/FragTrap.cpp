@@ -1,14 +1,26 @@
 #include "FragTrap.hpp"
 
+/*------Canonical form--------*/
 FragTrap::FragTrap() : _hit(100), _maxHit(100), _energy(100), _maxEnergy(100),
-_level(1), _name("default"), _meleeDmg(30), _rangedDmg(20), _armorDmg(5)
+_level(1), _name("Noah"), _meleeDmg(30), _rangedDmg(20), _armorDmg(5)
 {
-	std::cout << "FR4G-TP: " << this->_name << " This is from... Matilda" << std::endl;
+	this->_grenadeDmg = 80;
+	this->_shotgunDmg = 15;
+	this->_sniperDmg = 35;
+	this->_gunDmg = 10;
+	this->_kunaiDmg = 8;
+	std::cout << "FR4G-TP: " << this->_name << " This is sparta!!!!!" << std::endl;
 };
 
 FragTrap::FragTrap( std::string name) : _hit(100), _maxHit(100), _energy(100), _maxEnergy(100),
 _level(1), _name(name), _meleeDmg(30), _rangedDmg(20), _armorDmg(5)
 {
+	/* Braveheart (1995) */
+	this->_grenadeDmg = 80;
+	this->_shotgunDmg = 15;
+	this->_sniperDmg = 35;
+	this->_gunDmg = 10;
+	this->_kunaiDmg = 8;
 	std::cout << "FR4G-TP: " << this->_name << " This is from... Matilda" << std::endl;
 };
 
@@ -19,7 +31,8 @@ FragTrap::FragTrap( FragTrap const & obj)
 
 FragTrap::~FragTrap()
 {
-	std::cout << "Muerte" << std::endl;
+	/*Tombstone (1993)*/
+	std::cout << "Destructor: \"this is funny\"" << std::endl;
 };
 
 FragTrap &	FragTrap::operator=( FragTrap const & rhs)
@@ -36,20 +49,20 @@ FragTrap &	FragTrap::operator=( FragTrap const & rhs)
 	return *this;
 }
 
+/*----------functions----------*/
 void	FragTrap::rangedAttack(std::string const & target)
 {
-	std::cout << "FR4G-TP " << this->_name << " attacks "
+	std::cout << "FR4G-TP -> " << this->_name << " attacks "
 		<< target << " at range, causing " << this->_rangedDmg
 		<< " points of damage!" << std::endl;
 };
 
 void	FragTrap::meleeAttack(std::string const & target)
 {
-	std::cout << "FR4G-TP " << this->_name << " attacks "
+	std::cout << "FR4G-TP -> " << this->_name << " attacks "
 		<< target << " at melee, causing " << this->_meleeDmg
 		<< " points of damage!" << std::endl;
 };
-
 
 void	FragTrap::takeDAmage(unsigned int amount)
 {
@@ -59,17 +72,18 @@ void	FragTrap::takeDAmage(unsigned int amount)
 	if ((int)this->_hit - (int)amount < 1)
 	{
 		res = (int)this->_maxHit - ((int)this->_maxHit - (int)this->_hit);
-		std::cout << "FR4G-TP " << this->_name << " did take " << res << " of dmg!" << std::endl;
-		std::cout << "FR4G-TP " << this->_name << " Freedooooooooooom!" << std::endl;
+		std::cout << "FR4G-TP (i) " << this->_name << " did take " << res << " of dmg!" << std::endl;
+		/* Braveheart (1995) */
+		std::cout << "FR4G-TP: " << this->_name << " Freedooooooooooom!" << std::endl;
 		this->_hit = 0;
 	}
 	else
 	{
 		this->_hit -= amount;
-		std::cout << "FR4G-TP " << this->_name << " did take " << amount << " of dmg!" << std::endl;
-		std::cout << "FR4G-TP " << this->_name << " it doesn't hurt, I'm groot" << std::endl;
+		std::cout << "FR4G-TP (i) " << this->_name << " did take " << amount << " of dmg!" << std::endl;
+		std::cout << "FR4G-TP: " << this->_name << " it doesn't hurt, I'm groot" << std::endl;
 	}
-	std::cout << "FR4G-TP " << this->_name << " life points : " << this->_hit << std::endl;
+	std::cout << "FR4G-TP (i) " << this->_name << " life points : " << this->_hit << std::endl;
 };
 
 void	FragTrap::beRepaired(unsigned int amount)
@@ -80,9 +94,9 @@ void	FragTrap::beRepaired(unsigned int amount)
 		res = (int)this->_maxHit - (int)this->_hit;
 	else
 		res = (int)amount;
-	std::cout << "FR4G-TP " << this->_name << " + " << res << " life points" << std::endl;
+	std::cout << "FR4G-TP -> " << this->_name << " + " << res << " life points" << std::endl;
 	this->_hit += res;
-	std::cout << "FR4G-TP " << this->_name << " life points : " << this->_hit << std::endl;
+	std::cout << "FR4G-TP (i) " << this->_name << " life points : " << this->_hit << std::endl;
 };
 
 void	FragTrap::vaulthunter_dot_exe(std::string const & target)
@@ -113,42 +127,7 @@ void	FragTrap::vaulthunter_dot_exe(std::string const & target)
 	}
 };
 
-
-void	FragTrap::grenadeAttack(std::string const & target)
-{
-	std::cout << "FR4G-TP " << this->_name << " attacks "
-		<< target << " at melee, causing " << this->_meleeDmg
-		<< " points of damage!" << std::endl;
-};
-
-void	FragTrap::shotgunAttack(std::string const & target)
-{
-	std::cout << "FR4G-TP " << this->_name << " attacks "
-		<< target << " at melee, causing " << this->_meleeDmg
-		<< " points of damage!" << std::endl;
-};
-
-void	FragTrap::sniperAttack(std::string const & target)
-{
-	std::cout << "FR4G-TP " << this->_name << " attacks "
-		<< target << " at melee, causing " << this->_meleeDmg
-		<< " points of damage!" << std::endl;
-};
-
-void	FragTrap::gunAttack(std::string const & target)
-{
-	std::cout << "FR4G-TP " << this->_name << " attacks "
-		<< target << " at melee, causing " << this->_meleeDmg
-		<< " points of damage!" << std::endl;
-};
-
-void	FragTrap::kunaiAttack(std::string const &target)
-{
-	std::cout << "FR4G-TP " << this->_name << " attacks "
-		<< target << " at melee, causing " << this->_meleeDmg
-		<< " points of damage!" << std::endl;
-};
-
+/*-------getters----------*/
 std::string	FragTrap::getName(void)
 {
 	return ( this->_name );
@@ -162,4 +141,66 @@ unsigned int	FragTrap::getMeleeDmg(void)
 unsigned int	FragTrap::getRangedDmg(void)
 {
 	return ( this->_rangedDmg );
+};
+
+/*--------random functions----------*/
+void	FragTrap::grenadeAttack(std::string const & target)
+{
+	std::cout << "FR4G-TP " << this->_name << " attacks "
+		<< target << " with a grenade, causing " << this->_grenadeDmg
+		<< " points of damage!" << std::endl;
+};
+
+void	FragTrap::shotgunAttack(std::string const & target)
+{
+	std::cout << "FR4G-TP " << this->_name << " attacks "
+		<< target << " with a shotgun, causing " << this->_shotgunDmg
+		<< " points of damage!" << std::endl;
+};
+
+void	FragTrap::sniperAttack(std::string const & target)
+{
+	std::cout << "FR4G-TP " << this->_name << " attacks "
+		<< target << " with a sniper, causing " << this->_sniperDmg
+		<< " points of damage!" << std::endl;
+};
+
+void	FragTrap::gunAttack(std::string const & target)
+{
+	std::cout << "FR4G-TP " << this->_name << " attacks "
+		<< target << " whit a gun, causing " << this->_gunDmg
+		<< " points of damage!" << std::endl;
+};
+
+void	FragTrap::kunaiAttack(std::string const &target)
+{
+	std::cout << "FR4G-TP " << this->_name << " attacks "
+		<< target << " whit a kunai, causing " << this->_kunaiDmg
+		<< " points of damage!" << std::endl;
+};
+
+/*------getters random------------*/
+unsigned int	FragTrap::getGrenadeDmg(void)
+{
+	return ( this->_grenadeDmg );
+};
+
+unsigned int	FragTrap::getShotgunDmg(void)
+{
+	return ( this->_shotgunDmg );
+};
+
+unsigned int	FragTrap::getSniperDmg(void)
+{
+	return ( this->_sniperDmg );
+};
+
+unsigned int	FragTrap::getGunDmg(void)
+{
+	return ( this->_gunDmg );
+};
+
+unsigned int	FragTrap::getKunaiDmg(void)
+{
+	return ( this->_kunaiDmg );
 };
