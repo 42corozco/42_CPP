@@ -6,7 +6,7 @@
 /*   By: corozco <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/23 14:15:38 by corozco           #+#    #+#             */
-/*   Updated: 2021/01/23 16:15:47 by corozco          ###   ########.fr       */
+/*   Updated: 2021/02/28 15:07:06 by corozco          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ Fixed::Fixed( const int tmp )
 Fixed::Fixed( const float tmp)
 {
 	std::cout << "Float constructor called" << std::endl;
-	this->m_fixed = round(tmp * (1 << this->m_bits));
+	this->m_fixed = roundf(tmp * (1 << this->m_bits));
 }
 
 Fixed::Fixed( Fixed const & obj )
@@ -64,7 +64,7 @@ float	Fixed::toFloat( void ) const
 
 int		Fixed::toInt( void ) const
 {
-	return ( (int)round(this->m_fixed >> this->m_bits) );
+	return ( (int)roundf(this->m_fixed >> this->m_bits) );
 }
 
 std::ostream &	operator<<( std::ostream & o, Fixed const & i )
