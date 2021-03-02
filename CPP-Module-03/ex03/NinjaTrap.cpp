@@ -27,7 +27,6 @@ NinjaTrap::NinjaTrap( std::string name)
 	this->_meleeDmg = 60;
 	this->_rangedDmg = 5;
 	this->_armorDmg = 0;
-	this->_armorDmg = 5;
 	std::cout << "NINJA-TP: " << this->_name << " text2!!!!!" << std::endl;
 };
 
