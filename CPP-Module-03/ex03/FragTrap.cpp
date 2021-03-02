@@ -8,7 +8,7 @@ FragTrap::FragTrap() : _grenadeDmg(80), _shotgunDmg(15), _sniperDmg(35),
 	this->_maxHit = 100;
 	this->_energy = 100;
 	this->_maxEnergy = 100;
-	this->_level = 100;
+	this->_level = 1;
 	this->_name = "FR4G-TP";
 	this->_meleeDmg = 30;
 	this->_rangedDmg = 20;
@@ -23,7 +23,7 @@ FragTrap::FragTrap( std::string name ) : _grenadeDmg(80), _shotgunDmg(15), _snip
 	this->_maxHit = 100;
 	this->_energy = 100;
 	this->_maxEnergy = 100;
-	this->_level = 100;
+	this->_level = 1;
 	this->_name = name;
 	this->_meleeDmg = 30;
 	this->_rangedDmg = 20;

@@ -7,6 +7,7 @@ int		main(void)
 	FragTrap	frag("Quimera");
 	ScavTrap	scav("Segfa");
 	NinjaTrap	ninja("Marce");
+	NinjaTrap	ninja2("Pacho");
 
 	srand(time(NULL));
 	frag.rangedAttack(scav.getName());
@@ -18,5 +19,8 @@ int		main(void)
 	frag.vaulthunter_dot_exe(scav.getName());
 	scav.takeDAmage(frag.getDmg());
 	scav.challengeNewcomer(3);
+	ninja.ninjaShoebox(frag);
+	ninja.ninjaShoebox(scav);
+	ninja.ninjaShoebox(ninja2);
 	return (0);
 }

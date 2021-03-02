@@ -30,7 +30,6 @@ ClapTrap &	ClapTrap::operator=( ClapTrap const & rhs)
 	return *this;
 }
 
-
 /*----------functions----------*/
 void	ClapTrap::rangedAttack(std::string const & target)
 {

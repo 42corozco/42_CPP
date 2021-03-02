@@ -5,13 +5,13 @@ ScavTrap::ScavTrap()
 {
 	this->_hit = 100;
 	this->_maxHit = 100;
-	this->_energy = 100;
-	this->_maxEnergy = 100;
-	this->_level = 100;
+	this->_energy = 50;
+	this->_maxEnergy = 50;
+	this->_level = 1;
 	this->_name = "SC4V-TP";
-	this->_meleeDmg = 30;
-	this->_rangedDmg = 20;
-	this->_armorDmg = 5;
+	this->_meleeDmg = 20;
+	this->_rangedDmg = 15;
+	this->_armorDmg = 3;
 	
 	std::cout << "SC4V-TP: " << this->_name << " texto1!!!!!" << std::endl;
 };
@@ -20,13 +20,13 @@ ScavTrap::ScavTrap( std::string name)
 {
 	this->_hit = 100;
 	this->_maxHit = 100;
-	this->_energy = 100;
-	this->_maxEnergy = 100;
-	this->_level = 100;
+	this->_energy = 50;
+	this->_maxEnergy = 50;
+	this->_level = 1;
 	this->_name = name;
-	this->_meleeDmg = 30;
-	this->_rangedDmg = 20;
-	this->_armorDmg = 5;
+	this->_meleeDmg = 20;
+	this->_rangedDmg = 15;
+	this->_armorDmg = 3;
 	std::cout << "SC4V-TP: " << this->_name << " text2!!!!!" << std::endl;
 };
 

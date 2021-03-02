@@ -3,29 +3,30 @@
 /*------Canonical form--------*/
 NinjaTrap::NinjaTrap()
 {
-	this->_hit = 100;
-	this->_maxHit = 100;
-	this->_energy = 100;
-	this->_maxEnergy = 100;
-	this->_level = 100;
+	this->_hit = 60;
+	this->_maxHit = 60;
+	this->_energy = 120;
+	this->_maxEnergy = 120;
+	this->_level = 1;
 	this->_name = "NINJA-TP";
-	this->_meleeDmg = 30;
-	this->_rangedDmg = 20;
-	this->_armorDmg = 5;
+	this->_meleeDmg = 60;
+	this->_rangedDmg = 5;
+	this->_armorDmg = 0;
 	
 	std::cout << "NINJA-TP: " << this->_name << " texto1!!!!!" << std::endl;
 };
 
 NinjaTrap::NinjaTrap( std::string name)
 {
-	this->_hit = 100;
-	this->_maxHit = 100;
-	this->_energy = 100;
-	this->_maxEnergy = 100;
-	this->_level = 100;
+	this->_hit = 60;
+	this->_maxHit = 60;
+	this->_energy = 120;
+	this->_maxEnergy = 120;
+	this->_level = 1;
 	this->_name = name;
-	this->_meleeDmg = 30;
-	this->_rangedDmg = 20;
+	this->_meleeDmg = 60;
+	this->_rangedDmg = 5;
+	this->_armorDmg = 0;
 	this->_armorDmg = 5;
 	std::cout << "NINJA-TP: " << this->_name << " text2!!!!!" << std::endl;
 };
@@ -57,15 +58,15 @@ NinjaTrap &	NinjaTrap::operator=( NinjaTrap const & rhs)
 
 void	NinjaTrap::ninjaShoebox( FragTrap &cible )
 {
-	std::cout << "nani1" << cible.getName();
+	std::cout << "nani1" << cible.getName() << std::endl;
 };
 
 void	NinjaTrap::ninjaShoebox( ScavTrap &cible )
 {
-	std::cout << "nani2" << cible.getName();
+	std::cout << "nani2" << cible.getName() << std::endl;
 };
 
 void	NinjaTrap::ninjaShoebox( NinjaTrap &cible )
 {
-	std::cout << "nani3" << cible.getName();
+	std::cout << "nani3" << cible.getName() << std::endl;
 };
