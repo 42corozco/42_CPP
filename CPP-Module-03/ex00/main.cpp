@@ -5,7 +5,7 @@ int		main(void)
 	FragTrap frag1;
 	FragTrap frag2("Quimera");
 
-	
+	srand(time(NULL));
 	frag2.rangedAttack(frag1.getName());
 	frag1.takeDAmage(frag2.getRangedDmg());
 	frag1.meleeAttack(frag2.getName());
