@@ -6,11 +6,11 @@
 #    By: corozco <????@????.???>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/12/03 02:02:47 by corozco           #+#    #+#              #
-#    Updated: 2021/03/02 11:31:59 by corozco          ###   ########.fr        #
+#    Updated: 2021/03/02 12:05:37 by corozco          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = ex00
+NAME = ex01
 HEAD := -I./
 CP = clang++
 
@@ -20,6 +20,7 @@ CFLAGSF = -g3 -fsanitize=address -Wall -Wextra -Werror
 
 SRC := \
 	FragTrap.cpp \
+	ScavTrap.cpp \
 	main.cpp
 
 OBJS = $(addprefix objs/, $(SRC:.cpp=.o))

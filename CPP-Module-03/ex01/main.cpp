@@ -6,27 +6,27 @@
 /*   By: corozco <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/02 11:35:08 by corozco           #+#    #+#             */
-/*   Updated: 2021/03/02 11:35:15 by corozco          ###   ########.fr       */
+/*   Updated: 2021/03/02 12:42:50 by corozco          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "FragTrap.hpp"
+#include "ScavTrap.hpp"
 
 int		main(void)
 {
-	FragTrap frag1;
-	FragTrap frag2("Quimera");
+	FragTrap frag("Quimera");
+	ScavTrap scav("Segfa");
 
 	srand(time(NULL));
-	frag2.rangedAttack(frag1.getName());
-	frag1.takeDAmage(frag2.getRangedDmg());
-	frag1.meleeAttack(frag2.getName());
-	frag2.takeDAmage(frag1.getMeleeDmg());
-	frag1.beRepaired(100);
-	frag2.beRepaired(100);
-	frag1.vaulthunter_dot_exe(frag2.getName());
-	frag2.takeDAmage(frag1.getDmg());
-	frag2.vaulthunter_dot_exe(frag1.getName());
-	frag1.takeDAmage(frag2.getDmg());
+	frag.rangedAttack(scav.getName());
+	scav.takeDAmage(frag.getRangedDmg());
+	scav.meleeAttack(frag.getName());
+	frag.takeDAmage(scav.getMeleeDmg());
+	scav.beRepaired(100);
+	frag.beRepaired(100);
+	frag.vaulthunter_dot_exe(scav.getName());
+	scav.takeDAmage(frag.getDmg());
+	scav.challengeNewcomer(3);
 	return (0);
 }
