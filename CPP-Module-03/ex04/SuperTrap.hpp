@@ -14,7 +14,6 @@ class	SuperTrap : public NinjaTrap, public FragTrap
 	SuperTrap( SuperTrap const & obj);
 	~SuperTrap();
 	SuperTrap&	operator=( SuperTrap const & rhs);
-
 };
 
 #endif

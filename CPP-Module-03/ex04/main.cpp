@@ -22,5 +22,7 @@ int		main(void)
 	ninja.ninjaShoebox(frag);
 	ninja.ninjaShoebox(scav);
 	ninja.ninjaShoebox(ninja2);
+//	ninja.vaulthunter_dot_exe(scav.getName());
+//	scav.takeDAmage(ninja.getDmg());
 	return (0);
 }

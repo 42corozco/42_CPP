@@ -1,32 +1,23 @@
 #include "SuperTrap.hpp"
+#include "NinjaTrap.hpp"
+#include "FragTrap.hpp"
 
 /*------Canonical form--------*/
-SuperTrap::SuperTrap()
+SuperTrap::SuperTrap() : FragTrap(), NinjaTrap()
 {
-	this->_hit = 60;
-	this->_maxHit = 60;
 	this->_energy = 120;
 	this->_maxEnergy = 120;
-	this->_level = 1;
 	this->_name = "NINJA-TP";
 	this->_meleeDmg = 60;
-	this->_rangedDmg = 5;
-	this->_armorDmg = 0;
-	
 	std::cout << "NINJA-TP: " << this->_name << " texto1!!!!!" << std::endl;
 };
 
-SuperTrap::SuperTrap( std::string name)
+SuperTrap::SuperTrap(std::string name) : FragTrap(name), NinjaTrap(name)
 {
-	this->_hit = 60;
-	this->_maxHit = 60;
 	this->_energy = 120;
 	this->_maxEnergy = 120;
-	this->_level = 1;
 	this->_name = name;
 	this->_meleeDmg = 60;
-	this->_rangedDmg = 5;
-	this->_armorDmg = 0;
 	std::cout << "NINJA-TP: " << this->_name << " text2!!!!!" << std::endl;
 };
 

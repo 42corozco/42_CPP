@@ -3,6 +3,29 @@
 /*------Canonical form--------*/
 ClapTrap::ClapTrap()
 {
+	this->_hit = 0;
+	this->_maxHit = 0;
+	this->_energy = 0;
+	this->_maxEnergy = 0;
+	this->_level = 1;
+	this->_name = "Cl4P-TP";
+	this->_meleeDmg = 0;
+	this->_rangedDmg = 0;
+	this->_armorDmg = 0;
+	std::cout << "Contructeur pere!!!!!" << std::endl;
+};
+
+ClapTrap::ClapTrap( std::string name )
+{
+	this->_hit = 0;
+	this->_maxHit = 0;
+	this->_energy = 0;
+	this->_maxEnergy = 0;
+	this->_level = 1;
+	this->_name = name;
+	this->_meleeDmg = 0;
+	this->_rangedDmg = 0;
+	this->_armorDmg = 0;
 	std::cout << "Contructeur pere!!!!!" << std::endl;
 };
 

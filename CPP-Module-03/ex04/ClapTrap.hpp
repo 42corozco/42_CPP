@@ -9,6 +9,7 @@ class		ClapTrap
 	public:
 	/*Canonical form*/
 	ClapTrap();
+	ClapTrap( std::string name );
 	ClapTrap( ClapTrap const & obj);
 	~ClapTrap();
 	ClapTrap&	operator=( ClapTrap const & rhs);
