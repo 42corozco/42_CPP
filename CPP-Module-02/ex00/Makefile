@@ -14,7 +14,7 @@ NAME = ex00
 HEAD := -I./
 CP = clang++
 
-CFLAGS = -Wall -Wextra -Werror
+CFLAGS = -Wall -Wextra -Werror -std=c++98
 CFLAGSF = -g3 -fsanitize=address -Wall -Wextra -Werror
 
 SRC := \
