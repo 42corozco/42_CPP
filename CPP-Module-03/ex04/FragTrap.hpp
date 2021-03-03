@@ -4,6 +4,7 @@
 # include <iostream>
 # include <string>
 # include "ClapTrap.hpp"
+# include <cstdlib>
 
 class	FragTrap : public virtual ClapTrap
 {
