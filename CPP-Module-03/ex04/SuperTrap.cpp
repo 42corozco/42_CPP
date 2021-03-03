@@ -1,9 +1,7 @@
 #include "SuperTrap.hpp"
-#include "NinjaTrap.hpp"
-#include "FragTrap.hpp"
 
 /*------Canonical form--------*/
-SuperTrap::SuperTrap() : FragTrap(), NinjaTrap()
+SuperTrap::SuperTrap() : FragTrap()
 {
 	this->_energy = 120;
 	this->_maxEnergy = 120;
@@ -12,7 +10,7 @@ SuperTrap::SuperTrap() : FragTrap(), NinjaTrap()
 	std::cout << "NINJA-TP: " << this->_name << " texto1!!!!!" << std::endl;
 };
 
-SuperTrap::SuperTrap(std::string name) : FragTrap(name), NinjaTrap(name)
+SuperTrap::SuperTrap(std::string name) : FragTrap(name)
 {
 	this->_energy = 120;
 	this->_maxEnergy = 120;

@@ -16,7 +16,7 @@ NinjaTrap::NinjaTrap()
 	std::cout << "NINJA-TP: " << this->_name << " texto1!!!!!" << std::endl;
 };
 
-NinjaTrap::NinjaTrap( std::string name)
+NinjaTrap::NinjaTrap( std::string name )
 {
 	this->_hit = 60;
 	this->_maxHit = 60;

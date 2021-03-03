@@ -1,6 +1,7 @@
 #include "FragTrap.hpp"
 #include "ScavTrap.hpp"
 #include "NinjaTrap.hpp"
+#include "SuperTrap.hpp"
 
 int		main(void)
 {
@@ -8,6 +9,7 @@ int		main(void)
 	ScavTrap	scav("Segfa");
 	NinjaTrap	ninja("Marce");
 	NinjaTrap	ninja2("Pacho");
+	SuperTrap	super("Nani");
 
 	srand(time(NULL));
 	frag.rangedAttack(scav.getName());
@@ -22,7 +24,8 @@ int		main(void)
 	ninja.ninjaShoebox(frag);
 	ninja.ninjaShoebox(scav);
 	ninja.ninjaShoebox(ninja2);
-//	ninja.vaulthunter_dot_exe(scav.getName());
-//	scav.takeDAmage(ninja.getDmg());
+	super.vaulthunter_dot_exe(scav.getName());
+	scav.takeDAmage(super.getDmg());
+	super.ninjaShoebox(frag);
 	return (0);
 }
