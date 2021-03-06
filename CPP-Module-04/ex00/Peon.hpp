@@ -3,17 +3,19 @@
 
 # include <iostream>
 # include <string>
+# include "Victim.hpp"
 
-class	Peon
+class	Peon : public Victim
 {
 	public:
 	/*Canonical form*/
-	Peon();
+	Peon( std::string name );
 	Peon( Peon const & obj);
 	~Peon();
 	Peon&	operator=( Peon const & rhs);
 
 	private:
+	Peon();
 };
 
 #endif

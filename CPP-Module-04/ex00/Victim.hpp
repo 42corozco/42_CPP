@@ -7,7 +7,6 @@
 class	Victim
 {
 	public:
-	Victim();
 	Victim( std::string name );
 	Victim( Victim const & obj );
 	~Victim();
@@ -18,7 +17,8 @@ class	Victim
 	void		getPolymorphed(void) const;
 
 
-	private:
+	protected:
+	Victim();
 	std::string	_name;
 };
 
