@@ -26,9 +26,9 @@ Peon&	Peon::operator=( Peon const & rhs )
 	return (*this);
 };
 
-void		Peon::getPolymorphed(void) const //aun no terminado
+void		Peon::getPolymorphed(void) const
 {
-	std::cout <<this->_name << " has been turned into a cute little sheep!" \
+	std::cout <<this->_name << " has been turned into a pink pony!" \
 		<< std::endl;
 };
 
@@ -36,4 +36,4 @@ std::ostream &	operator<<( std::ostream & o, Peon const & i )
 {
 	o << "I am " << i.getName() << " and I like otters!" << std::endl;
 	return ( o );
-}
+};

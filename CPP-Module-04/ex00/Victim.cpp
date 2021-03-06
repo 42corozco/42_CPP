@@ -3,7 +3,7 @@
 Victim::Victim(void)
 {
 	this->_name = "Troll";
-}
+};
 
 Victim::Victim( std::string name ) : _name(name)
 {
@@ -44,4 +44,4 @@ std::ostream &	operator<<( std::ostream & o, Victim const & i )
 {
 	o << "I am " << i.getName() << " and I like otters!" << std::endl;
 	return ( o );
-}
+};

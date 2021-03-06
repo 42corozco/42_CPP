@@ -2,8 +2,14 @@
 #include "Sorcerer.hpp"
 #include "Victim.hpp"
 
-int			main(void)
+int main()
 {
+	Sorcerer robert("Robert", "the Magnificent");
+	Victim jim("Jimmy");
+	Peon joe("Joe");
 
-	return (0);
+	std::cout << robert << jim << joe;
+	robert.polymorph(jim);
+	robert.polymorph(joe);
+	return 0;
 }

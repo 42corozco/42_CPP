@@ -13,8 +13,8 @@ class	Victim
 	Victim&	operator=( Victim const & rhs );
 
 	/*getters random*/
-	std::string	getName(void) const;
-	void		getPolymorphed(void) const;
+	std::string		getName(void) const;
+	void			getPolymorphed(void) const;
 
 
 	protected:

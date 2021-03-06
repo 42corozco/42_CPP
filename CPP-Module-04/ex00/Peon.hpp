@@ -13,6 +13,7 @@ class	Peon : public Victim
 	Peon( Peon const & obj);
 	~Peon();
 	Peon&	operator=( Peon const & rhs);
+	void	getPolymorphed(void) const;
 
 	private:
 	Peon();
