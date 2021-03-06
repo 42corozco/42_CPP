@@ -7,13 +7,21 @@
 class	Victim
 {
 	public:
-	/*Canonical form*/
 	Victim();
-	Victim( Victim const & obj);
+	Victim( std::string name );
+	Victim( Victim const & obj );
 	~Victim();
-	Victim&	operator=( Victim const & rhs);
+	Victim&	operator=( Victim const & rhs );
+
+	/*getters random*/
+	std::string	getName(void) const;
+	void		getPolymorphed(void) const;
+
 
 	private:
+	std::string	_name;
 };
+
+std::ostream &	operator<<( std::ostream & o, Victim const & i );
 
 #endif
