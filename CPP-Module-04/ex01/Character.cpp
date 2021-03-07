@@ -75,7 +75,11 @@ AWeapon		*Character::getWeapon(void) const
 std::ostream	&operator<< (std::ostream &o, const Character &rhs)
 {
 	o << rhs.getName() << " has " << rhs.getAp() \
-		<< " AP and wields a " << rhs.getWeapon()->getName() << std::endl;
+		<< " AP and ";
+	if (rhs.getWeapon())
+		std::cout << "wields a " << rhs.getWeapon()->getName() << std::endl;
+	else
+		std::cout << "is unarmed" << std::endl;
 	return ( o );
 }
 
