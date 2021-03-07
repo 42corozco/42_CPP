@@ -1,6 +1,8 @@
 #include "AWeapon.hpp"
 #include "PlasmaRifle.hpp"
 #include "PowerFist.hpp"
+#include "RadScorpion.hpp"
+#include "Character.hpp"
 
 int main()
 {

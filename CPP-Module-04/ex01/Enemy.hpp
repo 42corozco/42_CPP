@@ -11,20 +11,25 @@ class Enemy
 	Enemy();
 	Enemy( Enemy const & obj );
 	Enemy( int hp, std::string const & type );
-	~Enemy();
+	virtual ~Enemy();
 	Enemy&	operator=( Enemy const & rhs);
 
 	/*Getters*/
 	std::string		getType() const;
 	int				getHP() const;
 
+	/*Setters*/
+	void			setType(std::string type);
+	void			setHP(int i);
+
 	/*method*/
 	virtual void	takeDamage(int i);
-	protected:
 
 	private:
+	protected:
 	int			_hp;
 	std::string	_type;
+
 };
 
 #endif

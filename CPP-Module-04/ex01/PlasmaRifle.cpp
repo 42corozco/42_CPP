@@ -3,6 +3,7 @@
 PlasmaRifle::PlasmaRifle() : AWeapon("Plasma Rifle", 21, 5)
 {
 }
+
 /*
 PlasmaRifle::PlasmaRifle( std::string const & name, int apcost, int damage ) : AWeapon(name, apcost, damage)
 {

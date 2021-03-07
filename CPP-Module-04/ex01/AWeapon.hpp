@@ -19,6 +19,7 @@ class AWeapon
 	int			getDamage() const;
 
 	virtual void	attack() const = 0;
+
 	protected:
 	AWeapon();
 	std::string	_name;

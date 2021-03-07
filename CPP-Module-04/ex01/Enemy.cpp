@@ -36,6 +36,17 @@ int				Enemy::getHP() const
 	return (this->_hp);
 }
 
+/*Setters*/
+void			Enemy::setType(std::string type)
+{
+	this->_type = type;
+}
+
+void			Enemy::setHP(int i)
+{
+	this->_hp = i;
+}
+
 /*method*/
 void			Enemy::takeDamage(int i)
 {
