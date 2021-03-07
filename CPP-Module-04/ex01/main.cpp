@@ -1,3 +1,7 @@
+#include "AWeapon.hpp"
+#include "PlasmaRifle.hpp"
+#include "PowerFist.hpp"
+
 int main()
 {
 	Character* me = new Character("me");

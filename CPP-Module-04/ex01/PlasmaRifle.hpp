@@ -8,13 +8,16 @@
 class	PlasmaRifle : public AWeapon
 {
 	public:
-	PlasmaRifle( std::string const & name, int apcost, int damage );
+	PlasmaRifle();
+//	PlasmaRifle( std::string const & name, int apcost, int damage );
 	PlasmaRifle( PlasmaRifle const & obj );
 	~PlasmaRifle();
 	PlasmaRifle&	operator=( PlasmaRifle const & rhs);
 
+//atack
+	void	attack() const;
+
 	private:
-	PlasmaRifle();
 };
 
 #endif
