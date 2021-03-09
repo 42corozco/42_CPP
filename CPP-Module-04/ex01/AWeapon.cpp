@@ -1,6 +1,6 @@
 #include "AWeapon.hpp"
 
-AWeapon::AWeapon() : _name("def"), _apcost(0), _damage(0)
+AWeapon::AWeapon()
 {
 }
 

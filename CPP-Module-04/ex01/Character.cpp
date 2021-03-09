@@ -6,6 +6,7 @@ Character::Character()
 
 Character::Character( std::string const & name ) : _name(name)
 {
+	this->_awa = NULL;
 	this->_ap = 40;
 }
 
