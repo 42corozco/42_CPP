@@ -1,4 +1,4 @@
-NAME = ex03
+NAME = ex01
 HEAD := -I./
 CP = clang++
 

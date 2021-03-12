@@ -15,7 +15,7 @@ class	PlasmaRifle : public AWeapon
 	PlasmaRifle&	operator=( PlasmaRifle const & rhs);
 
 //atack
-	void	attack() const;
+	virtual void	attack() const;
 
 	private:
 };

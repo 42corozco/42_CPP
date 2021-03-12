@@ -9,13 +9,12 @@ class	PowerFist : public AWeapon
 {
 	public:
 	PowerFist();
-//	PowerFist( std::string const & name, int apcost, int damage );
 	PowerFist( PowerFist const & obj );
 	~PowerFist();
 	PowerFist&	operator=( PowerFist const & rhs);
 
 //atack
-	void	attack() const;
+	virtual void	attack() const;
 
 	private:
 };

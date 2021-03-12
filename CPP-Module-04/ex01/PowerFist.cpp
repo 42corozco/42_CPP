@@ -1,12 +1,8 @@
 #include "PowerFist.hpp"
 
-PowerFist::PowerFist() : AWeapon("Power Fist", 50, 8)
+PowerFist::PowerFist() : AWeapon("Power Fist", 8, 50)
 {
 }
-/*
-PowerFist::PowerFist( std::string const & name, int apcost, int damage ) : AWeapon(name, apcost, damage)
-{
-}*/
 
 PowerFist::PowerFist( PowerFist const & obj )
 {

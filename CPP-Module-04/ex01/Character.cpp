@@ -47,13 +47,13 @@ void Character::attack(Enemy *enemy)
 	ap_cost = this->_awa->getAPCost();
 	if (this->_ap - ap_cost >= 0)
 	{
-		this->_awa->attack();
 		enemy->takeDamage(this->_awa->getDamage());
 		if (enemy->getHP() <= 0)
 			delete enemy;
 		this->_ap -= ap_cost;
 		std::cout << this->_name << " attacks " << enemy->getType() \
 			<< "with a " << this->_awa->getName() << std::endl;
+		this->_awa->attack();
 	}
 }
 
