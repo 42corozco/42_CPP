@@ -3,8 +3,10 @@
 
 # include <iostream>
 # include <string>
+# include <vector>
 
 # include "ISquad.hpp"
+# include "ISpaceMarine.hpp"
 
 class	Squad : public ISquad
 {
@@ -16,11 +18,11 @@ class	Squad : public ISquad
 
 	virtual int				getCount() const;
 	virtual ISpaceMarine*	getUnit(int) const;
-//	virtual int				push(ISpaceMarine*);
+	virtual int				push(ISpaceMarine*);
 	protected:
 	private:
 	int				_count;
-	ISpaceMarine	*_unit;
+	std::vector<ISpaceMarine*>	_unit; //no sirve
 };
 
 #endif
