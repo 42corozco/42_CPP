@@ -7,11 +7,9 @@ CFLAGS = -Wall -Wextra -Werror -std=c++98
 CFLAGSF = -g3 -fsanitize=address -Wall -Wextra -Werror
 
 SRC := \
+	AssaultTerminator.cpp \
 	Squad.cpp \
 	TacticalMarine.cpp \
-	AssaultTerminator.cpp \
-	ISpaceMarine.cpp \
-	ISquad.cpp \
 	main.cpp
 
 OBJS = $(addprefix objs/, $(SRC:.cpp=.o))
