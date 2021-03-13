@@ -1,9 +1,9 @@
 #ifndef ICE_HPP
 # define ICE_HPP
 
-# include <iostream>
-# include <string>
+# include "ICharacter.hpp"
 # include "AMateria.hpp"
+# include <iostream>
 
 class	Ice : public AMateria
 {
