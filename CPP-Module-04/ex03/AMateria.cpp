@@ -27,6 +27,7 @@ AMateria::~AMateria()
 /*Getters*/
 std::string const & AMateria::getType() const
 {
+	return ( this->_type );
 }
 
 unsigned int AMateria::getXP() const
@@ -49,6 +50,6 @@ void AMateria::use(ICharacter &target)
 {
 	this->_xp += 10;
 //	this->setXP(this->getXP() + 10);
-//	std::cout << "AMateria heals " << target.getName() << " ." << std::endl;
-	(void)target;
+	std::cout << "AMateria heals " << target.getName() << " ." << std::endl;
+//	(void)target;
 }

@@ -9,6 +9,7 @@ class	Character : public ICharacter
 {
 	public:
 	Character();
+	Character(const std::string &name);
 	Character( Character const & obj );
 	Character&	operator=( Character const & rhs);
 	~Character();
