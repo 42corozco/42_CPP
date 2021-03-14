@@ -13,7 +13,7 @@ AMateria::AMateria( AMateria const & obj )
 	*this = obj;
 }
 
-AMateria&	AMateria::operator=( AMateria const & rhs)
+AMateria&	AMateria::operator=( AMateria const & rhs )
 {
 	this->_type = rhs._type;
 	this->_xp = rhs._xp;

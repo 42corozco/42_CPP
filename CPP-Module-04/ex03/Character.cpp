@@ -19,10 +19,13 @@ Character::Character( Character const & obj )
 Character&	Character::operator=( Character const & rhs)
 {
 	this->_name = rhs._name;
-	for (int i = 0; i < 4; i += 1)
+	for (int i = 0; i < 4; i ++)
 	{
 		this->_materia[i] = NULL;
-		this->_materia[i] = rhs._materia[i]->clone();
+		if (rhs._materia[i])
+			this->_materia[i] = rhs._materia[i]->clone();
+		else
+			this->_materia[i] = NULL;
 	}
 	return (*this);
 }
@@ -78,7 +81,7 @@ void Character::unequip(int idx)
 
 void Character::use(int idx, ICharacter& target)
 {
-	if (this->_materia[idx])
+	if (idx < 4 && this->_materia[idx])
 	{
 		this->_materia[idx]->use(target);
 	}
