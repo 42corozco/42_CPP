@@ -38,11 +38,11 @@ class Bureaucrat
 		{}
 	};
 
-	/*gettes*/
+	/*getters*/
 	std::string const 	getName() const;
 	int					getGrade() const;
 
-	/*settes*/
+	/*setters*/
 	void	setGrade(int grade);
 
 	protected:

@@ -74,7 +74,7 @@ void	Bureaucrat::MGrade()
 	}
 }
 
-/*gettes*/
+/*getters*/
 std::string const	Bureaucrat::getName() const
 {
 	return ( this->_name );
@@ -85,7 +85,7 @@ int					Bureaucrat::getGrade() const
 	return ( this->_grade );
 }
 
-/*settes*/
+/*setters*/
 void	Bureaucrat::setGrade(int grade)
 {
 	this->_grade = grade;
