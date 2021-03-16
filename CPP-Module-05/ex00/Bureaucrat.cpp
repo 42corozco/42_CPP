@@ -6,17 +6,25 @@ Bureaucrat::Bureaucrat() : _name("Default"), _grade(150)
 
 Bureaucrat::Bureaucrat(std::string const & name, int grade) : _name(name)
 {
-//	try
-//	{
+	try
+	{
 		if (grade > 150)
-			throw Bureaucrat(); //nani?
+			throw Bureaucrat::GradeTooLowException();
+	}
+	catch (Bureaucrat::GradeTooLowException & e)
+	{
+		std::cerr << "Erreur : " << e.what() << std::endl;
+	}
+	try
+	{
 		if (grade < 1)
-			throw Bureaucrat(); //nani?
-		_grade = grade;
-//	}
-//	catch (std::execption & e)
-//	{
-//	}
+			throw Bureaucrat::GradeTooHighException();
+	}
+	catch (Bureaucrat::GradeTooHighException & e)
+	{
+		std::cerr << "Erreur : " << e.what() << std::endl;
+	}
+	_grade = grade;
 }
 
 Bureaucrat::Bureaucrat(const Bureaucrat & obj) : _name(obj.getName())

@@ -44,6 +44,13 @@ int		main(void)
 		std::cout << test2 << std::endl;
 		std::cout << "--------------destructors--------------" << std::endl;
 	}
+	{
+		std::cout << "------------test4----------------" << std::endl;
+		std::cout << "test -> create with un invalid grade(Exception)\n" << std::endl;
+		Bureaucrat test1("Quimera", 0);
+		Bureaucrat test2("Noah", 156);
+		std::cout << "--------------destructors--------------" << std::endl;
+	}
 
 	return (0);
 }

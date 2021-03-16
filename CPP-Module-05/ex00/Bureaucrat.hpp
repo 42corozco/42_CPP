@@ -19,11 +19,12 @@ class Bureaucrat
 	class	GradeTooHighException : public std::exception
 	{
 		public:
+		GradeTooHighException() {}
 		virtual const char* what() const throw()
 		{
 			return ("is the highest rank\n");
 		}
-
+		virtual ~GradeTooHighException() throw() {}
 	};
 
 	class	GradeTooLowException : public std::exception
@@ -33,7 +34,8 @@ class Bureaucrat
 		{
 			return ("is the lowest rank\n");
 		}
-
+		virtual ~GradeTooLowException() throw()
+		{}
 	};
 
 	/*gettes*/
