@@ -1,29 +1,16 @@
 #include "Bureaucrat.hpp"
 
+
 Bureaucrat::Bureaucrat() : _name("Default"), _grade(150)
 {
 }
 
 Bureaucrat::Bureaucrat(std::string const & name, int grade) : _name(name)
 {
-	try
-	{
-		if (grade > 150)
-			throw Bureaucrat::GradeTooLowException();
-	}
-	catch (Bureaucrat::GradeTooLowException & e)
-	{
-		std::cerr << "Erreur : " << e.what() << std::endl;
-	}
-	try
-	{
-		if (grade < 1)
-			throw Bureaucrat::GradeTooHighException();
-	}
-	catch (Bureaucrat::GradeTooHighException & e)
-	{
-		std::cerr << "Erreur : " << e.what() << std::endl;
-	}
+	if (grade > 150)
+		throw Bureaucrat::GradeTooLowException();
+	if (grade < 1)
+		throw Bureaucrat::GradeTooHighException();
 	_grade = grade;
 }
 
@@ -46,32 +33,28 @@ Bureaucrat::~Bureaucrat()
 
 void	Bureaucrat::PGrade()
 {
-	try
-	{
-		if (this->_grade == 1)
-			throw Bureaucrat::GradeTooHighException();
-		std::cout << "Increment" << std::endl;
-		this->_grade--;
-	}
-	catch(Bureaucrat::GradeTooHighException const & e)
-	{
-		std::cerr << "Erreur : " << e.what() << std::endl;
-	}
+	if (this->_grade == 1)
+		throw Bureaucrat::GradeTooHighException();
+	std::cout << "Increment" << std::endl;
+	this->_grade--;
 }
 
 void	Bureaucrat::MGrade()
 {
-	try
-	{
-		if (this->_grade == 150)
-			throw Bureaucrat::GradeTooLowException();
-		std::cout << "Decrement" << std::endl;
-		this->_grade++;
-	}
-	catch(Bureaucrat::GradeTooLowException const & e)
-	{
-		std::cerr << "Erreur : " << e.what() << std::endl;
-	}
+	if (this->_grade == 150)
+		throw Bureaucrat::GradeTooLowException();
+	std::cout << "Decrement" << std::endl;
+	this->_grade++;
+}
+
+void	Bureaucrat::signForm(Form const & obj) const
+{
+	if (obj.getSigned() == true)
+		std::cout << this->_name << " signs " << obj.getName() << "." << std::endl;
+	else
+		std::cout << this->_name << " cant sign " << obj.getName() \
+			<< " Because needs a higher rank" << std::endl;
+			//<< Form::GradeTooLowException().what() << std::endl;
 }
 
 /*getters*/

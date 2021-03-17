@@ -3,6 +3,9 @@
 
 # include <string>
 # include <iostream>
+# include "Form.hpp"
+
+class	Form;
 
 class Bureaucrat
 {
@@ -16,13 +19,15 @@ class Bureaucrat
 	void	PGrade();
 	void	MGrade();
 
+	void	signForm(Form const & obj) const;
+
 	class	GradeTooHighException : public std::exception
 	{
 		public:
 		GradeTooHighException() {}
 		virtual const char* what() const throw()
 		{
-			return ("is the highest rank");
+			return ("1 is the highest rank");
 		}
 		virtual ~GradeTooHighException() throw() {}
 	};
@@ -32,7 +37,7 @@ class Bureaucrat
 		public:
 		virtual const char* what() const throw()
 		{
-			return ("is the lowest rank");
+			return ("150 is the lowest rank");
 		}
 		virtual ~GradeTooLowException() throw()
 		{}

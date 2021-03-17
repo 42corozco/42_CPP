@@ -3,6 +3,9 @@
 
 # include <string>
 # include <iostream>
+# include "Bureaucrat.hpp"
+
+class Bureaucrat;
 
 class	Form
 {
@@ -12,6 +15,8 @@ class	Form
 	Form &operator=(const Form & o);
 	~Form();
 
+	void	beSigned(Bureaucrat const & obj);
+		
 	/*getters*/
 	const std::string	getName() const;
 	int					getSigned() const;
