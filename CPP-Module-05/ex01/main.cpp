@@ -1,9 +1,15 @@
 #include "Bureaucrat.hpp"
+#include "Form.hpp"
+
+#define COLOR_ONE	"\033[35m"
+#define COLOR_TWO	"\033[33m"
+#define COLOR_NO	"\033[0m"
 
 int		main(void)
 {
 	{
-		std::cout << "------------test1----------------" << std::endl;
+		std::cout << COLOR_ONE << "\n------------EXERCICE_00----------" << COLOR_NO << std::endl;
+		std::cout << COLOR_TWO << "------------test1----------------" << COLOR_NO << std::endl;
 		std::cout << "Test -> copy constructor and operator '='\n" << std::endl;
 		Bureaucrat test1("Quimera", 1);
 		Bureaucrat test2(test1);
@@ -15,7 +21,7 @@ int		main(void)
 		std::cout << "--------------destructors--------------" << std::endl;
 	}
 	{
-		std::cout << "------------test2----------------" << std::endl;
+		std::cout << COLOR_TWO << "------------test2----------------" << COLOR_NO << std::endl;
 		std::cout << "test -> increment and decrement\n" << std::endl;
 		Bureaucrat test1("Quimera", 1);
 		Bureaucrat test2("Noah", 35);
@@ -30,7 +36,7 @@ int		main(void)
 		std::cout << "--------------destructors--------------" << std::endl;
 	}
 	{
-		std::cout << "------------test3----------------" << std::endl;
+		std::cout << COLOR_TWO << "------------test3----------------" << COLOR_NO << std::endl;
 		std::cout << "test -> increment and decrement (Exception)\n" << std::endl;
 		Bureaucrat test1("Quimera", 150);
 		Bureaucrat test2("Noah", 1);
@@ -45,12 +51,37 @@ int		main(void)
 		std::cout << "--------------destructors--------------" << std::endl;
 	}
 	{
-		std::cout << "------------test4----------------" << std::endl;
+		std::cout << COLOR_TWO << "------------test4----------------" << COLOR_NO << std::endl;
 		std::cout << "test -> create with un invalid grade(Exception)\n" << std::endl;
 		Bureaucrat test1("Quimera", 0);
 		Bureaucrat test2("Noah", 156);
 		std::cout << "--------------destructors--------------" << std::endl;
 	}
+	{
+		std::cout << COLOR_ONE << "\n------------EXERCICE_01----------" << COLOR_NO << std::endl;
+		std::cout << COLOR_TWO << "------------test1----------------" << COLOR_NO << std::endl;
+		std::cout << "Test -> copy constructor and operator '='\n" << std::endl;
 
+		Form	test1("Quimera", 1, 100);
+		Form	test2 = test1;
+		Form	test3(test2);
+		std::cout << test1 << std::endl;
+		std::cout << "Ope(=) " << test2 << std::endl;
+		std::cout << "Copy: " <<test3 << std::endl;
+		std::cout << "--------------destructors--------------" << std::endl;
+	}
+	{
+		std::cout << COLOR_TWO << "------------test2----------------" << COLOR_NO << std::endl;
+		std::cout << "test -> create with un invalid grade(Exception)\n" << std::endl;
+		Form	*test1;
+		try
+		{
+			test1 = new Form("Form1.doc", 0, 100);
+		}
+		catch(std::exception e)
+		{
+			std::cerr << "nani" << std::endl;
+		}
+	}
 	return (0);
 }

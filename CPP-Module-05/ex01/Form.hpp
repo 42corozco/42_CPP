@@ -9,6 +9,7 @@ class	Form
 	public:
 	Form(std::string const name, int gradeSig, int gradeExe);
 	Form(const Form & obj);
+	Form &operator=(const Form & o);
 	~Form();
 
 	/*getters*/
@@ -21,22 +22,37 @@ class	Form
 	void				setName(const std::string name);
 	void				setSigned(bool i);
 
+	class	GradeTooHighException : public std::exception
+	{
+		public:
+		GradeTooHighException() {}
+		virtual const char* what() const throw()
+		{
+			return ("is the highest rank");
+		}
+		virtual ~GradeTooHighException() throw() {}
+	};
+
+	class	GradeTooLowException : public std::exception
+	{
+		public:
+		GradeTooLowException() {}
+		virtual const char* what() const throw()
+		{
+			return ("is the lowest rank");
+		}
+		virtual ~GradeTooLowException() throw() {}
+	};
+
 	protected:
 	private:
 	Form();
-	Form &operator=(const Form & o);
 	const std::string	_name;
 	bool				_signed;
 	const int			_gradeSig;
 	const int			_gradeExe;
 };
 
-std::ostream &	operator<<( std::ostream & o, Form const & i )
-{
-	o << "Form: " <<i.getName() << " |Signed: " << i.getSigned() \
-		<< " |Grade requirend to sing: "<< i.getGradeSig() \
-		<< " |Grade requirend to execute: "<< i.getGradeExe() << ".";
-	return ( o );
-}
+std::ostream &	operator<<( std::ostream & o, Form const & i );
 
 #endif
