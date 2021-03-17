@@ -35,26 +35,54 @@ int		main(void)
 		std::cout << "--------------destructors--------------" << std::endl;
 	}
 	{
-		std::cout << COLOR_TWO << "------------test3----------------" << COLOR_NO << std::endl;
-		std::cout << "test -> increment and decrement (Exception)\n" << std::endl;
-		Bureaucrat test1("Quimera", 150);
-		Bureaucrat test2("Noah", 1);
+		try
+		{
+			std::cout << COLOR_TWO << "------------test3----------------" << COLOR_NO << std::endl;
+			std::cout << "test -> increment and decrement (Exception)\n" << std::endl;
+			Bureaucrat test1("Quimera", 150);
 
-		std::cout << test1 << std::endl;
-		test1.MGrade();
-		std::cout << test1 << std::endl;
-		std::cout << "---" << std::endl;
-		std::cout << test2 << std::endl;
-		test2.PGrade();
-		std::cout << test2 << std::endl;
-		std::cout << "--------------destructors--------------" << std::endl;
+			std::cout << test1 << std::endl;
+			test1.MGrade();
+			std::cout << test1 << std::endl;
+			std::cout << "--------------destructors--------------" << std::endl;
+		}
+		catch(std::exception & e)
+		{
+			std::cerr << "Error "<< e.what() << std::endl;
+		}
+		try
+		{
+			std::cout << "---" << std::endl;
+			Bureaucrat test2("Noah", 1);
+			std::cout << test2 << std::endl;
+			test2.PGrade();
+			std::cout << test2 << std::endl;
+			std::cout << "--------------destructors--------------" << std::endl;
+		}
+		catch(std::exception & e)
+		{
+			std::cerr << "Error "<< e.what() << std::endl;
+		}
 	}
 	{
 		std::cout << COLOR_TWO << "------------test4----------------" << COLOR_NO << std::endl;
 		std::cout << "test -> create with un invalid grade(Exception)\n" << std::endl;
-		Bureaucrat test1("Quimera", 0);
-		Bureaucrat test2("Noah", 156);
-		std::cout << "--------------destructors--------------" << std::endl;
+		try
+		{
+			Bureaucrat test1("Quimera", 0);
+		}
+		catch(std::exception & e)
+		{
+			std::cerr << "Error "<< e.what() << std::endl;
+		}
+		try
+		{
+			Bureaucrat test2("Noah", 156);
+		}
+		catch(std::exception & e)
+		{
+			std::cerr << "Error "<< e.what() << std::endl;
+		}
 	}
 	return (0);
 }
