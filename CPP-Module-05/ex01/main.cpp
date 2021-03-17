@@ -119,7 +119,7 @@ int		main(void)
 		}
 	}
 	{
-		std::cout << COLOR_TWO << "------------test2----------------" << COLOR_NO << std::endl;
+		std::cout << COLOR_TWO << "------------test3----------------" << COLOR_NO << std::endl;
 		std::cout << "test -> BeSigned and Signform\n" << std::endl;
 		Bureaucrat	test1("Quimera", 1);
 		Bureaucrat	test2("Noah", 120);
