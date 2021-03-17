@@ -22,7 +22,7 @@ class Bureaucrat
 		GradeTooHighException() {}
 		virtual const char* what() const throw()
 		{
-			return ("is the highest rank\n");
+			return ("is the highest rank");
 		}
 		virtual ~GradeTooHighException() throw() {}
 	};
@@ -32,7 +32,7 @@ class Bureaucrat
 		public:
 		virtual const char* what() const throw()
 		{
-			return ("is the lowest rank\n");
+			return ("is the lowest rank");
 		}
 		virtual ~GradeTooLowException() throw()
 		{}
