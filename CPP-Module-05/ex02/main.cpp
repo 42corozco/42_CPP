@@ -1,5 +1,7 @@
 #include "Bureaucrat.hpp"
 #include "Form.hpp"
+#include "RobotomyRequestForm.hpp"
+#include "PresidentialPardonForm.hpp"
 
 #define COLOR_ONE	"\033[35m"
 #define COLOR_TWO	"\033[33m"
@@ -74,7 +76,7 @@ int		main(void)
 		}
 		catch(std::exception & e)
 		{
-			std::cerr << "Error: 1 "<< e.what() << std::endl;
+			std::cerr << "Error: "<< e.what() << std::endl;
 		}
 		try
 		{
@@ -82,7 +84,7 @@ int		main(void)
 		}
 		catch(std::exception & e)
 		{
-			std::cerr << "Error: 150 "<< e.what() << std::endl;
+			std::cerr << "Error: "<< e.what() << std::endl;
 		}
 	}
 	{
@@ -100,12 +102,12 @@ int		main(void)
 	}
 	{
 		std::cout << COLOR_TWO << "------------test2----------------" << COLOR_NO << std::endl;
-		std::cout << "test -> create with un invalid grade(Exception)\n" << std::endl;
+		std::cout << "test -> create with an invalid grade(Exception)\n" << std::endl;
 		try
 		{
 			Form	test1("Form1.doc", 0, 100);
 		}
-		catch(std::exception e)
+		catch(std::exception & e)
 		{
 			std::cerr << "Error: 1 "<< e.what() << std::endl;
 		}
@@ -113,7 +115,7 @@ int		main(void)
 		{
 			Form	test2("Form2.doc", 1, 151);
 		}
-		catch(std::exception e)
+		catch(std::exception & e)
 		{
 			std::cerr << "Error: 150 "<< e.what() << std::endl;
 		}
@@ -130,6 +132,51 @@ int		main(void)
 		form1.beSigned(test1);
 		form2.beSigned(test2);
 		form3.beSigned(test2);
+		std::cout << "--------------destructors--------------" << std::endl;
+	}
+	{
+		std::cout << COLOR_ONE << "\n------------EXERCICE_02----------" << COLOR_NO << std::endl;
+		std::cout << COLOR_TWO << "------------test1----------------" << COLOR_NO << std::endl;
+		std::cout << "Test -> execute robot\n" << std::endl;
+
+		srand (time(NULL));
+		Bureaucrat	test1("Quimera", 1);
+		Bureaucrat	test2("Noah", 120);
+		Bureaucrat	test3("Rebeca", 40);
+
+		Form		form1("Form1.doc", 1, 10);
+		RobotomyRequestForm		form2("Form2.doc");
+		Form		form3("Form3.doc", 1, 10);
+		PresidentialPardonForm	form4("Form4.doc");
+
+		try
+		{
+			form1.beSigned(test1);
+			form2.beSigned(test1);
+			form2.execute(test1);
+			form2.execute(test3);
+			form2.execute(test2);
+		}
+		catch(std::exception & e)
+		{
+			std::cerr << "Error: "<< e.what() << std::endl;
+		}
+		std::cout << COLOR_TWO << "------------test2----------------" << COLOR_NO << std::endl;
+		std::cout << "Test -> (execute) form not signed\n" << std::endl;
+		try
+		{
+			form3.execute(test1);
+		}
+		catch(std::exception & e)
+		{
+			std::cerr << "Error: "<< e.what() << std::endl;
+		}
+		std::cout << COLOR_TWO << "------------test3----------------" << COLOR_NO << std::endl;
+		std::cout << "Test -> (execute) presidential\n" << std::endl;
+		try
+		{
+		}
+
 		std::cout << "--------------destructors--------------" << std::endl;
 	}
 	return (0);

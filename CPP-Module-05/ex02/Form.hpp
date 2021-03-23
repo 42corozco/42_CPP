@@ -16,7 +16,7 @@ class	Form
 	~Form();
 
 	void	beSigned(Bureaucrat const & obj);
-		
+	void	execute(Bureaucrat const & executor) const;
 	/*getters*/
 	const std::string	getName() const;
 	int					getSigned() const;
@@ -26,6 +26,17 @@ class	Form
 	/*setters*/
 	void				setName(const std::string name);
 	void				setSigned(bool i);
+
+	class	NoSignedExeption : public std::exception
+	{
+		public:
+		NoSignedExeption() {}
+		virtual const char* what() const throw()
+		{
+			return ("Form isn't signed");
+		}
+		virtual ~NoSignedExeption() throw() {}
+	};
 
 	class	GradeTooHighException : public std::exception
 	{

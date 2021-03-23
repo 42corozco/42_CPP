@@ -10,8 +10,8 @@ SRC := \
 	Bureaucrat.cpp \
 	Form.cpp \
 	ShrubberyCreationForm.cpp \
-	RobotomyRequestForm.cpp \
 	PresidentialPardonForm.cpp \
+	RobotomyRequestForm.cpp \
 	main.cpp
 
 OBJS = $(addprefix objs/, $(SRC:.cpp=.o))

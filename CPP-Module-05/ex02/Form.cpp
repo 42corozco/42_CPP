@@ -46,6 +46,17 @@ void	Form::beSigned(Bureaucrat const & obj)
 	obj.signForm(*this);
 }
 
+void	Form::execute(Bureaucrat const & executor) const
+{
+	if (this->getSigned())
+	{
+		if (executor.getGrade() > this->getGradeExe())
+			throw(Form::GradeTooLowException());
+	}
+	else
+		throw(Form::NoSignedExeption());
+}
+
 /*getters*/
 const std::string	Form::getName() const
 {
