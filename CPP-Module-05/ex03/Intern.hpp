@@ -1,7 +1,24 @@
 #ifndef INTERN_HPP
-# define INTERN_HPP
+#define INTERN_HPP
+#include "Form.hpp"
+#include "PresidentialPardonForm.hpp"
+#include "RobotomyRequestForm.hpp"
+#include "ShrubberyCreationForm.hpp"
 
-#include <string>
-#include <iostream>
+class Intern {
 
+	public:
+		Intern();
+		~Intern();
+		Intern(Intern const & src);
+		Intern & operator=(Intern const & rhs);
+
+		Form* makeForm(std::string formName, std::string formTarget);
+		Form* createPresidentialPardon(std::string formTarget);
+		Form* createRobotomyRequest(std::string formTarget);
+		Form* createShrubberyCreation(std::string formTarget);
+	protected:
+	private:
+
+};
 #endif

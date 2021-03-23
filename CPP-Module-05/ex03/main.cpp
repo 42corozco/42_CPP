@@ -3,6 +3,7 @@
 #include "RobotomyRequestForm.hpp"
 #include "PresidentialPardonForm.hpp"
 #include "ShrubberyCreationForm.hpp"
+#include "Intern.hpp"
 
 #define COLOR_ONE	"\033[35m"
 #define COLOR_TWO	"\033[33m"
@@ -211,6 +212,28 @@ int		main(void)
 			std::cerr << "Error: "<< form5.getGradeExe() << " "<< e.what() << std::endl;
 		}
 		std::cout << "--------------destructors--------------" << std::endl;
+	}
+	{
+		std::cout << COLOR_ONE << "\n------------EXERCICE_03----------" << COLOR_NO << std::endl;
+		std::cout << COLOR_TWO << "------------test1----------------" << COLOR_NO << std::endl;
+		std::cout << "Test -> makeform\n" << std::endl;
+
+		Intern nani;
+
+		Form* form1 = nani.makeForm("presidential pardon", "Quimera");
+		Form* form2 = nani.makeForm("robotomy request", "Rebeca");
+		Form* form3 = nani.makeForm("shrubbery creation", "Noah");
+		Form* form4 = nani.makeForm("shrubbery", "Nani");
+
+		std::cout << *form1 << std::endl;
+		std::cout << *form2 << std::endl;
+		std::cout << *form3 << std::endl;
+//		std::cout << *form4;
+
+		delete form1;
+		delete form2;
+		delete form3;
+		delete form4;
 	}
 	return (0);
 }
