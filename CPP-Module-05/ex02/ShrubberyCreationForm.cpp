@@ -26,5 +26,29 @@ ShrubberyCreationForm::~ShrubberyCreationForm()
 void	ShrubberyCreationForm::execute(Bureaucrat const & executor) const
 {
 	Form::execute(executor);
+	std::ofstream fd;
 
+	fd.open(this->getName() + "_shrubbery", std::ofstream::out | std::ofstream::trunc);
+	if (fd.fail())
+	{
+		std::cerr << "Error: " << strerror(errno) << std::endl;
+		return ;
+	}
+	fd << "          .     .  .      +     .      .          ." << std::endl;
+	fd << "     .       .      .     #       .           ." << std::endl;
+	fd << "        .      .         ###            .      .      ." << std::endl;
+	fd << "      .      .   \"#:. .:##\"##:. .:#\"  .      ." << std::endl;
+	fd << "          .      . \"####\"###\"####\"  ." << std::endl;
+	fd << "       .     \"#:.    .:#\"###\"#:.    .:#\"  .        .       ." << std::endl;
+	fd << "  .             \"#########\"#########\"        .        ." << std::endl;
+	fd << "        .    \"#:.  \"####\"###\"####\"  .:#\"   .       ." << std::endl;
+	fd << "     .     .  \"#######\"\"##\"##\"\"#######\"                  ." << std::endl;
+	fd << "                .\"##\"#####\"#####\"##\"           .      ." << std::endl;
+	fd << "    .   \"#:. ...  .:##\"###\"###\"##:.  ... .:#\"     ." << std::endl;
+	fd << "      .     \"#######\"##\"#####\"##\"#######\"      .     ." << std::endl;
+	fd << "    .    .     \"#####\"\"#######\"\"#####\"    .      ." << std::endl;
+	fd << "            .     \"      000      \"    .     ." << std::endl;
+	fd << "       .         .   .   000     .        .       ." << std::endl;
+	fd << ".. .. ..................O000O........................ ......" << std::endl;
+	fd.close();
 }

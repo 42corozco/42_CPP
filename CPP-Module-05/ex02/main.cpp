@@ -2,6 +2,7 @@
 #include "Form.hpp"
 #include "RobotomyRequestForm.hpp"
 #include "PresidentialPardonForm.hpp"
+#include "ShrubberyCreationForm.hpp"
 
 #define COLOR_ONE	"\033[35m"
 #define COLOR_TWO	"\033[33m"
@@ -143,11 +144,13 @@ int		main(void)
 		Bureaucrat	test1("Quimera", 1);
 		Bureaucrat	test2("Noah", 120);
 		Bureaucrat	test3("Rebeca", 40);
+		Bureaucrat	test4("Nani", 140);
 
 		Form		form1("Form1.doc", 1, 10);
 		RobotomyRequestForm		form2("Form2.doc");
 		Form		form3("Form3.doc", 1, 10);
 		PresidentialPardonForm	form4("Form4.doc");
+		ShrubberyCreationForm	form5("Form5.doc");
 
 		try
 		{
@@ -175,8 +178,38 @@ int		main(void)
 		std::cout << "Test -> (execute) presidential\n" << std::endl;
 		try
 		{
+			form4.beSigned(test1);
+			form4.execute(test1);
+			form4.execute(test2);
 		}
-
+		catch(std::exception & e)
+		{
+			std::cerr << "Error: "<< e.what() << std::endl;
+		}
+		std::cout << COLOR_TWO << "------------test4----------------" << COLOR_NO << std::endl;
+		std::cout << "Test -> (execute) ShrubberyCreationForm\n" << std::endl;
+		try
+		{
+			form5.beSigned(test1);
+			form5.execute(test1);
+			form5.execute(test4);
+		}
+		catch(std::exception & e)
+		{
+			std::cerr << "Error: "<< form5.getGradeExe() << " "<< e.what() << std::endl;
+		}
+		std::cout << COLOR_TWO << "------------test5----------------" << COLOR_NO << std::endl;
+		std::cout << "Test -> (execute) ShrubberyCreationForm\n" << std::endl;
+		try
+		{
+			form5.beSigned(test1);
+			form5.execute(test1);
+			form5.execute(test4);
+		}
+		catch(std::exception & e)
+		{
+			std::cerr << "Error: "<< form5.getGradeExe() << " "<< e.what() << std::endl;
+		}
 		std::cout << "--------------destructors--------------" << std::endl;
 	}
 	return (0);
