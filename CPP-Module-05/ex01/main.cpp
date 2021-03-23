@@ -105,7 +105,7 @@ int		main(void)
 		{
 			Form	test1("Form1.doc", 0, 100);
 		}
-		catch(std::exception e)
+		catch(std::exception &e)
 		{
 			std::cerr << "Error: 1 "<< e.what() << std::endl;
 		}
@@ -113,7 +113,7 @@ int		main(void)
 		{
 			Form	test2("Form2.doc", 1, 151);
 		}
-		catch(std::exception e)
+		catch(std::exception &e)
 		{
 			std::cerr << "Error: 150 "<< e.what() << std::endl;
 		}

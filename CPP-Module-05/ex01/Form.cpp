@@ -9,9 +9,9 @@ Form::Form(std::string const name, const int gradeSig, const int gradeExe) \
 {
 	this->_signed = false;
 	if (this->getGradeSig() < 1 || this->getGradeExe() < 1)
-		throw GradeTooHighException();
+		throw Form::GradeTooHighException();
 	else if (this->getGradeSig() > 150 || this->getGradeExe() > 150)
-		throw GradeTooLowException();
+		throw Form::GradeTooLowException();
 }
 
 Form::Form(const Form & obj) : _name(obj.getName()) \
