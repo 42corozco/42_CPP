@@ -12,8 +12,7 @@ NinjaTrap::NinjaTrap()
 	this->_meleeDmg = 60;
 	this->_rangedDmg = 5;
 	this->_armorDmg = 0;
-	
-	std::cout << "NINJA-TP: " << this->_name << " texto1!!!!!" << std::endl;
+	std::cout << "NINJA-TP: " << this->_name << " We got a badass here!" << std::endl;
 };
 
 NinjaTrap::NinjaTrap( std::string name)
@@ -27,7 +26,7 @@ NinjaTrap::NinjaTrap( std::string name)
 	this->_meleeDmg = 60;
 	this->_rangedDmg = 5;
 	this->_armorDmg = 0;
-	std::cout << "NINJA-TP: " << this->_name << " text2!!!!!" << std::endl;
+	std::cout << "NINJA-TP: " << this->_name << " We got a badass here!" << std::endl;
 };
 
 NinjaTrap::NinjaTrap( NinjaTrap const & obj)
@@ -37,7 +36,7 @@ NinjaTrap::NinjaTrap( NinjaTrap const & obj)
 
 NinjaTrap::~NinjaTrap()
 {
-	std::cout << "Destructor: \"NINJA-TP\": " << _name << std::endl;
+	std::cout << "Destructor: \"NINJA-TP\": Damn it!" << _name << std::endl;
 };
 
 NinjaTrap &	NinjaTrap::operator=( NinjaTrap const & rhs)
@@ -57,15 +56,15 @@ NinjaTrap &	NinjaTrap::operator=( NinjaTrap const & rhs)
 
 void	NinjaTrap::ninjaShoebox( FragTrap &cible )
 {
-	std::cout << "nani1" << cible.getName() << std::endl;
+	std::cout << this->_name << " :takes a bite out of " << cible.getName() << std::endl;
 };
 
 void	NinjaTrap::ninjaShoebox( ScavTrap &cible )
 {
-	std::cout << "nani2" << cible.getName() << std::endl;
+	std::cout << this->_name << " :throws a washing machine at " << cible.getName() << std::endl;
 };
 
 void	NinjaTrap::ninjaShoebox( NinjaTrap &cible )
 {
-	std::cout << "nani3" << cible.getName() << std::endl;
+	std::cout << this->_name << " : gives " << cible.getName() <<" a hug." <<std::endl;
 };
