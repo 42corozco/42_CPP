@@ -36,7 +36,7 @@ ScavTrap::ScavTrap( ScavTrap const & obj)
 
 ScavTrap::~ScavTrap()
 {
-	std::cout << "Destructor: \"SC4V-TP\": Ahh!" << _name << std::endl;
+	std::cout << "Destructor: \"SC4V-TP\": Ahh!" << std::endl;
 };
 
 ScavTrap &	ScavTrap::operator=( ScavTrap const & rhs)

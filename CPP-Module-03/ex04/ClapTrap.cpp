@@ -26,7 +26,7 @@ ClapTrap::ClapTrap( std::string name )
 	this->_meleeDmg = 0;
 	this->_rangedDmg = 0;
 	this->_armorDmg = 0;
-	std::cout << "I'm over here! << std::endl;
+	std::cout << "I'm over here!" << std::endl;
 };
 
 ClapTrap::ClapTrap( ClapTrap const & obj)

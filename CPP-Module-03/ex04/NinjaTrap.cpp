@@ -37,7 +37,7 @@ NinjaTrap::NinjaTrap( NinjaTrap const & obj)
 
 NinjaTrap::~NinjaTrap()
 {
-	std::cout << "Destructor: \"NINJA-TP\": Damn it!" << _name << std::endl;
+	std::cout << "Destructor: \"NINJA-TP\": Damn it!" << std::endl;
 };
 
 NinjaTrap &	NinjaTrap::operator=( NinjaTrap const & rhs)

@@ -38,7 +38,7 @@ FragTrap::FragTrap( FragTrap const & obj)
 
 FragTrap::~FragTrap()
 {
-	std::cout << "Destructor: \"FR4G-TP\": this is funny " << _name << std::endl;
+	std::cout << "Destructor: \"FR4G-TP\": this is funny " << std::endl;
 };
 
 FragTrap &	FragTrap::operator=( FragTrap const & rhs)

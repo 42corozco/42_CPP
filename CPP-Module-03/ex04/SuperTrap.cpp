@@ -26,7 +26,7 @@ SuperTrap::SuperTrap( SuperTrap const & obj)
 
 SuperTrap::~SuperTrap()
 {
-	std::cout << "Destructor: \"SuperTrap\": I can see... the code" << _name << std::endl;
+	std::cout << "Destructor: \"SuperTrap\": I can see... the code" << std::endl;
 };
 
 SuperTrap &	SuperTrap::operator=( SuperTrap const & rhs)
