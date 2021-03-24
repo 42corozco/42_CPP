@@ -119,7 +119,7 @@ void	FragTrap::sniperAttack(std::string const & target)
 void	FragTrap::gunAttack(std::string const & target)
 {
 	std::cout << "FR4G-TP " << this->_name << " attacks "
-		<< target << " whit a gun, causing " << this->_gunDmg
+		<< target << " with a gun, causing " << this->_gunDmg
 		<< " points of damage!" << std::endl;
 	this->_dmg = this->_gunDmg;
 };
@@ -127,7 +127,7 @@ void	FragTrap::gunAttack(std::string const & target)
 void	FragTrap::kunaiAttack(std::string const &target)
 {
 	std::cout << "FR4G-TP " << this->_name << " attacks "
-		<< target << " whit a kunai, causing " << this->_kunaiDmg
+		<< target << " with a kunai, causing " << this->_kunaiDmg
 		<< " points of damage!" << std::endl;
 	this->_dmg = this->_kunaiDmg;
 };
