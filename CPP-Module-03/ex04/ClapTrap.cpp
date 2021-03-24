@@ -12,7 +12,7 @@ ClapTrap::ClapTrap()
 	this->_meleeDmg = 0;
 	this->_rangedDmg = 0;
 	this->_armorDmg = 0;
-	std::cout << "Contructeur pere!!!!!" << std::endl;
+	std::cout << "Yoo hoooooooooo!" << std::endl;
 };
 
 ClapTrap::ClapTrap( std::string name )
@@ -26,7 +26,7 @@ ClapTrap::ClapTrap( std::string name )
 	this->_meleeDmg = 0;
 	this->_rangedDmg = 0;
 	this->_armorDmg = 0;
-	std::cout << "Contructeur pere!!!!!" << std::endl;
+	std::cout << "I'm over here! << std::endl;
 };
 
 ClapTrap::ClapTrap( ClapTrap const & obj)
@@ -36,7 +36,7 @@ ClapTrap::ClapTrap( ClapTrap const & obj)
 
 ClapTrap::~ClapTrap()
 {
-	std::cout << "Destructor: \"ClapTrap\"" << std::endl;
+	std::cout << "Destructor: \"ClapTrap\" Good luck!" << std::endl;
 };
 
 ClapTrap &	ClapTrap::operator=( ClapTrap const & rhs)
@@ -78,14 +78,14 @@ void	ClapTrap::takeDAmage(unsigned int amount)
 		res = (int)this->_maxHit - ((int)this->_maxHit - (int)this->_hit);
 		std::cout << "(i) " << this->_name << " did take " << res << " of dmg!" << std::endl;
 		/* Braveheart (1995) */
-		std::cout << this->_name << " Freedooooooooooom!" << std::endl;
+		std::cout << this->_name << " The traveler will protect me. The traveler will protect me." << std::endl;
 		this->_hit = 0;
 	}
 	else
 	{
 		this->_hit -= amount;
 		std::cout << "(i) " << this->_name << " did take " << amount << " of dmg!" << std::endl;
-		std::cout << this->_name << " it doesn't hurt, I'm groot" << std::endl;
+		std::cout << this->_name << " I don't like this... this is making me nervous. Take a deep breath- I can't breathe! This is just a recording of someone breathing! It's not real! It's just making me more nervous!" << std::endl;
 	}
 	std::cout << "(i) " << this->_name << " life points : " << this->_hit << std::endl;
 };

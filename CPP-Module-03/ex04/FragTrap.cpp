@@ -28,7 +28,7 @@ FragTrap::FragTrap( std::string name ) : _grenadeDmg(80), _shotgunDmg(15), _snip
 	this->_meleeDmg = 30;
 	this->_rangedDmg = 20;
 	this->_armorDmg = 5;
-	std::cout << "FR4G-TP: " << this->_name << " This is sparta!!!!!" << std::endl;
+	std::cout << "FR4G-TP: " << this->_name << " This is from... matilda!!!!!" << std::endl;
 };
 
 FragTrap::FragTrap( FragTrap const & obj)
@@ -39,7 +39,7 @@ FragTrap::FragTrap( FragTrap const & obj)
 FragTrap::~FragTrap()
 {
 	/*Tombstone (1993)*/
-	std::cout << "Destructor: \"FR4G-TP\": " << _name << std::endl;
+	std::cout << "Destructor: \"FR4G-TP\": this is funny " << _name << std::endl;
 };
 
 FragTrap &	FragTrap::operator=( FragTrap const & rhs)

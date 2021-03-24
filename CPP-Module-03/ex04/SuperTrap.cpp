@@ -7,7 +7,7 @@ SuperTrap::SuperTrap() : FragTrap()
 	this->_maxEnergy = 120;
 	this->_name = "NINJA-TP";
 	this->_meleeDmg = 60;
-	std::cout << "NINJA-TP: " << this->_name << " texto1!!!!!" << std::endl;
+	std::cout << "NINJA-TP: " << this->_name << " I am the best robot. Yeah, yeah, yeah, I am the best robot. Ooh, ooh, here we go!" << std::endl;
 };
 
 SuperTrap::SuperTrap(std::string name) : FragTrap(name)
@@ -16,7 +16,7 @@ SuperTrap::SuperTrap(std::string name) : FragTrap(name)
 	this->_maxEnergy = 120;
 	this->_name = name;
 	this->_meleeDmg = 60;
-	std::cout << "NINJA-TP: " << this->_name << " text2!!!!!" << std::endl;
+	std::cout << "NINJA-TP: " << this->_name << " I am the best robot. Yeah, yeah, yeah, I am the best robot. Ooh, ooh, here we go!" << std::endl;
 };
 
 SuperTrap::SuperTrap( SuperTrap const & obj)
@@ -26,7 +26,7 @@ SuperTrap::SuperTrap( SuperTrap const & obj)
 
 SuperTrap::~SuperTrap()
 {
-	std::cout << "Destructor: \"NINJA-TP\": " << _name << std::endl;
+	std::cout << "Destructor: \"SuperTrap\": I can see... the code" << _name << std::endl;
 };
 
 SuperTrap &	SuperTrap::operator=( SuperTrap const & rhs)
