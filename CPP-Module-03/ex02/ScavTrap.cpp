@@ -12,8 +12,7 @@ ScavTrap::ScavTrap()
 	this->_meleeDmg = 20;
 	this->_rangedDmg = 15;
 	this->_armorDmg = 3;
-	
-	std::cout << "SC4V-TP: " << this->_name << " texto1!!!!!" << std::endl;
+	std::cout << "SC4V-TP: " << this->_name << " Shut up and hurry!!!!!!" << std::endl;
 };
 
 ScavTrap::ScavTrap( std::string name)
@@ -27,7 +26,7 @@ ScavTrap::ScavTrap( std::string name)
 	this->_meleeDmg = 20;
 	this->_rangedDmg = 15;
 	this->_armorDmg = 3;
-	std::cout << "SC4V-TP: " << this->_name << " text2!!!!!" << std::endl;
+	std::cout << "SC4V-TP: " << this->_name << " Shut up and hurry!!!!!!" << std::endl;
 };
 
 ScavTrap::ScavTrap( ScavTrap const & obj)
@@ -37,7 +36,7 @@ ScavTrap::ScavTrap( ScavTrap const & obj)
 
 ScavTrap::~ScavTrap()
 {
-	std::cout << "Destructor: \"texto3\"" << std::endl;
+	std::cout << "Destructor: \"SC4V-TP\": Ahh!" << _name << std::endl;
 };
 
 ScavTrap &	ScavTrap::operator=( ScavTrap const & rhs)
@@ -55,23 +54,24 @@ ScavTrap &	ScavTrap::operator=( ScavTrap const & rhs)
 }
 
 /*----------functions----------*/
+
 void	ScavTrap::challengeNewcomer(unsigned int var)
 {
 	if ( var < 1 || var > 4)
-		std::cout << "no hay challenge" << std::endl;
+		std::cout << "I don't like this... " << std::endl;
 	switch ( var )
 	{
 		case 1:
-			std::cout << "challenge 1" << std::endl;
+			std::cout << "jump 500 times on one foot" << std::endl;
 			break ;
 		case 2:
-			std::cout << "challenge 2" << std::endl;
+			std::cout << "shout your name 200 times" << std::endl;
 			break ;
 		case 3:
-			std::cout << "challenge 3" << std::endl;
+			std::cout << "marathon 2000km" << std::endl;
 			break ;
 		case 4:
-			std::cout << "challenge 4" << std::endl;
+			std::cout << "touch your nose with your tongue" << std::endl;
 			break ;
 	}
 };
