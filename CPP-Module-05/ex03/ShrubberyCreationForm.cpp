@@ -1,4 +1,6 @@
 #include "ShrubberyCreationForm.hpp"
+#include <cerrno>
+#include <cstring>
 
 ShrubberyCreationForm::ShrubberyCreationForm() : Form("Default", 145, 137)
 {
@@ -28,7 +30,9 @@ void	ShrubberyCreationForm::execute(Bureaucrat const & executor) const
 	Form::execute(executor);
 	std::ofstream fd;
 
-	fd.open(this->getName() + "_shrubbery", std::ofstream::out | std::ofstream::trunc);
+	std::string tmp = this->getName() + "_shrubbery";
+	const char * file = tmp.c_str();
+	fd.open(file, std::ofstream::out | std::ofstream::trunc);
 	if (fd.fail())
 	{
 		std::cerr << "Error: " << strerror(errno) << std::endl;

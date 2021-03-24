@@ -1,5 +1,4 @@
 #include "RobotomyRequestForm.hpp"
-#include <time.h>
 
 RobotomyRequestForm::RobotomyRequestForm(void): Form("Default", 72, 45)
 {
