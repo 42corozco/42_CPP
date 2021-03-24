@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: corozco <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/03/02 11:35:23 by corozco           #+#    #+#             */
-/*   Updated: 2021/03/02 11:35:24 by corozco          ###   ########.fr       */
+/*   Created: 2021/03/02 11:35:28 by corozco           #+#    #+#             */
+/*   Updated: 2021/03/02 11:35:30 by corozco          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,18 +21,19 @@ _level(1), _name("Noah"), _meleeDmg(30), _rangedDmg(20), _armorDmg(5)
 	this->_sniperDmg = 35;
 	this->_gunDmg = 10;
 	this->_kunaiDmg = 8;
+	/* 300 (2006) */
 	std::cout << "FR4G-TP: " << this->_name << " This is sparta!!!!!" << std::endl;
 };
 
 FragTrap::FragTrap( std::string name) : _hit(100), _maxHit(100), _energy(100), _maxEnergy(100),
 _level(1), _name(name), _meleeDmg(30), _rangedDmg(20), _armorDmg(5)
 {
-	/* Braveheart (1995) */
 	this->_grenadeDmg = 80;
 	this->_shotgunDmg = 15;
 	this->_sniperDmg = 35;
 	this->_gunDmg = 10;
 	this->_kunaiDmg = 8;
+	/* Leon (1994) */
 	std::cout << "FR4G-TP: " << this->_name << " This is from... Matilda" << std::endl;
 };
 
@@ -93,6 +94,7 @@ void	FragTrap::takeDAmage(unsigned int amount)
 	{
 		this->_hit -= amount;
 		std::cout << "FR4G-TP (i) " << this->_name << " did take " << amount << " of dmg!" << std::endl;
+		/* Guardians of the Galaxy(2014) */
 		std::cout << "FR4G-TP: " << this->_name << " it doesn't hurt, I'm groot" << std::endl;
 	}
 	std::cout << "FR4G-TP (i) " << this->_name << " life points : " << this->_hit << std::endl;

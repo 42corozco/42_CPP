@@ -16,13 +16,13 @@
 ScavTrap::ScavTrap() : _hit(100), _maxHit(100), _energy(50), _maxEnergy(50),
 _level(1), _name("Manolo"), _meleeDmg(20), _rangedDmg(15), _armorDmg(3)
 {
-	std::cout << "SC4V-TP: " << this->_name << " texto1!!!!!" << std::endl;
+	std::cout << "SC4V-TP: " << this->_name << " Shut up and hurry!!!!!!" << std::endl;
 };
 
 ScavTrap::ScavTrap( std::string name) : _hit(100), _maxHit(100), _energy(50), _maxEnergy(50),
 _level(1), _name(name), _meleeDmg(20), _rangedDmg(15), _armorDmg(3)
 {
-	std::cout << "SC4V-TP: " << this->_name << " text2!!!!!" << std::endl;
+	std::cout << "SC4V-TP: " << this->_name << " Shut up and hurry!!!!!" << std::endl;
 };
 
 ScavTrap::ScavTrap( ScavTrap const & obj)
@@ -32,7 +32,7 @@ ScavTrap::ScavTrap( ScavTrap const & obj)
 
 ScavTrap::~ScavTrap()
 {
-	std::cout << "Destructor: \"texto3\"" << std::endl;
+	std::cout << "Destructor: Ahh!" << std::endl;
 };
 
 ScavTrap &	ScavTrap::operator=( ScavTrap const & rhs)
@@ -73,15 +73,14 @@ void	ScavTrap::takeDAmage(unsigned int amount)
 	{
 		res = (int)this->_maxHit - ((int)this->_maxHit - (int)this->_hit);
 		std::cout << "SC4V-TP (i) " << this->_name << " did take " << res << " of dmg!" << std::endl;
-		/* Braveheart (1995) */
-		std::cout << "SC4V-TP: " << this->_name << " texto4!" << std::endl;
+		std::cout << "SC4V-TP: " << this->_name << " I'm detecting a motor unit malfunction... I can't move! I'm paralyzed with fear!" << std::endl;
 		this->_hit = 0;
 	}
 	else
 	{
 		this->_hit -= amount;
 		std::cout << "SC4V-TP (i) " << this->_name << " did take " << amount << " of dmg!" << std::endl;
-		std::cout << "SC4V-TP: " << this->_name << " texto5!" << std::endl;
+		std::cout << "SC4V-TP: " << this->_name << " Oh my God, I'm leaking! I think I'm leaking! Ahhhh, I'm leaking! There's oil everywhere!" << std::endl;
 	}
 	std::cout << "SC4V-TP (i) " << this->_name << " life points : " << this->_hit << std::endl;
 };
@@ -102,20 +101,20 @@ void	ScavTrap::beRepaired(unsigned int amount)
 void	ScavTrap::challengeNewcomer(unsigned int var)
 {
 	if ( var < 1 || var > 4)
-		std::cout << "no hay challenge" << std::endl;
+		std::cout << "I don't like this... " << std::endl;
 	switch ( var )
 	{
 		case 1:
-			std::cout << "challenge 1" << std::endl;
+			std::cout << "jum 500 times on one foot" << std::endl;
 			break ;
 		case 2:
-			std::cout << "challenge 2" << std::endl;
+			std::cout << "shout your name 200 times" << std::endl;
 			break ;
 		case 3:
-			std::cout << "challenge 3" << std::endl;
+			std::cout << "marathon 2000km" << std::endl;
 			break ;
 		case 4:
-			std::cout << "challenge 4" << std::endl;
+			std::cout << "touch your nose with your tongue" << std::endl;
 			break ;
 	}
 };
