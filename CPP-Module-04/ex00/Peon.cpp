@@ -2,7 +2,7 @@
 
 Peon::Peon(void)
 {
-	_name = "Nani";
+	this->_name = "Nani";
 };
 
 Peon::Peon( std::string name ) : Victim(name)
@@ -28,7 +28,7 @@ Peon&	Peon::operator=( Peon const & rhs )
 
 void		Peon::getPolymorphed(void) const
 {
-	std::cout <<this->_name << " has been turned into a pink pony!" \
+	std::cout << this->_name << " has been turned into a pink pony!" \
 		<< std::endl;
 };
 

@@ -9,7 +9,7 @@ class	Victim
 	public:
 	Victim( std::string name );
 	Victim( Victim const & obj );
-	~Victim();
+	virtual ~Victim();
 	Victim&	operator=( Victim const & rhs );
 
 	/*getters random*/
