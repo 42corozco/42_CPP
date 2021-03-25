@@ -10,7 +10,7 @@ class AWeapon
 	/*Can*/
 	AWeapon( std::string const & name, int apcost, int damage );
 	AWeapon( AWeapon const & obj );
-	~AWeapon();
+	virtual ~AWeapon();
 	AWeapon&	operator=( AWeapon const & rhs);
 
 	/*Getters*/

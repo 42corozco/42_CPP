@@ -10,7 +10,7 @@ class	PowerFist : public AWeapon
 	public:
 	PowerFist();
 	PowerFist( PowerFist const & obj );
-	~PowerFist();
+	virtual ~PowerFist();
 	PowerFist&	operator=( PowerFist const & rhs);
 
 //atack

@@ -10,14 +10,13 @@ int main()
 {
 	{
 		std::cout << COLOR_TWO << "------------test1----------------" << COLOR_NO << std::endl;
-		Sorcerer perso1("Quimera", "Depredator");
-		Victim victim1("Noah");
-		Peon nani("Nani");
+		Sorcerer robert("Robert", "the Magnificent");
+		Victim jim("Jimmy");
+		Peon joe("Joe");
 		std::cout << "--------------fin - constructors--------------" << std::endl;
-
-		std::cout << perso1 << victim1 << nani;
-		perso1.polymorph(victim1);
-		perso1.polymorph(nani);
+		std::cout << robert << jim << joe;
+		robert.polymorph(jim);
+		robert.polymorph(joe);
 		std::cout << "--------------destructors--------------" << std::endl;
 	}
 	{

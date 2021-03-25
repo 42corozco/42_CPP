@@ -11,7 +11,7 @@ class	PlasmaRifle : public AWeapon
 	PlasmaRifle();
 //	PlasmaRifle( std::string const & name, int apcost, int damage );
 	PlasmaRifle( PlasmaRifle const & obj );
-	~PlasmaRifle();
+	virtual ~PlasmaRifle();
 	PlasmaRifle&	operator=( PlasmaRifle const & rhs);
 
 //atack

@@ -12,7 +12,7 @@ class SuperMutant : public Enemy
 	SuperMutant();
 	SuperMutant( SuperMutant const & obj );
 //	SuperMutant( int hp, std::string const & type );
-	~SuperMutant();
+	virtual ~SuperMutant();
 	SuperMutant&	operator=( SuperMutant const & rhs);
 
 	virtual void	takeDamage(int i);

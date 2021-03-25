@@ -21,15 +21,3 @@ RadScorpion&	RadScorpion::operator=( RadScorpion const & rhs)
 	this->setType(rhs.getType());
 	return (*this);
 }
-
-void			RadScorpion::takeDamage(int i)
-{
-	int tmp;
-
-	i -= 3;
-	tmp = this->_hp - i;
-	if (tmp < 0)
-		this->_hp = 0;
-	else 
-		this->_hp -= i;
-}

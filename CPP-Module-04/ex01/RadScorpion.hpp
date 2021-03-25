@@ -12,10 +12,9 @@ class RadScorpion : public Enemy
 	RadScorpion();
 	RadScorpion( RadScorpion const & obj );
 //	RadScorpion( int hp, std::string const & type );
-	~RadScorpion();
+	virtual ~RadScorpion();
 	RadScorpion&	operator=( RadScorpion const & rhs);
 
-	virtual void	takeDamage(int i);
 	protected:
 	private:
 };
