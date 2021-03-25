@@ -13,7 +13,7 @@ class	Character : public ICharacter
 	Character(const std::string &name);
 	Character( Character const & obj );
 	Character&	operator=( Character const & rhs);
-	~Character();
+	virtual ~Character();
 
 	virtual std::string const & getName() const;
 	virtual void equip(AMateria* m);

@@ -67,18 +67,30 @@ int main()
 		me->equip(tmp5);
 
 		std::cout << "test copy constructor" << std::endl;
-		Character *copy = new Character(*me);
 		std::cout << "I am " << me->getName() << std::endl;
-		std::cout << "C: I am " << copy->getName() << std::endl;
 
 		me->use(0, *bob);
 		std::cout << "Materia " << tmp1->getType() << " with " << tmp1->getXP() << " XP" << std::endl;
 		me->use(1, *bob);
 		std::cout << "Materia " << tmp2->getType() << " with " << tmp2->getXP() << " XP" << std::endl;
+		std::cout << "-------" << std::endl;
+		Character *copy = new Character(*me);
+		std::cout << "C: I am " << copy->getName() << std::endl;
 		copy->use(0, *bob);
+		std::cout << "Materia " << tmp1->getType() << " with " << tmp1->getXP() << " XP" << std::endl;
 		copy->use(1, *bob);
+		std::cout << "Materia " << tmp1->getType() << " with " << tmp1->getXP() << " XP" << std::endl;
+		std::cout << "-------" << std::endl;
+		me->use(0, *bob);
+		std::cout << "Materia " << tmp1->getType() << " with " << tmp1->getXP() << " XP" << std::endl;
+		me->use(1, *bob);
+		std::cout << "Materia " << tmp2->getType() << " with " << tmp2->getXP() << " XP" << std::endl;
 
 		me->use(4, *bob);
+
+		delete me;
+		delete bob;
+		delete src;
 	}
 	return 0;
 }
