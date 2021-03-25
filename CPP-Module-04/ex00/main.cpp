@@ -13,6 +13,7 @@ int main()
 		Sorcerer perso1("Quimera", "Depredator");
 		Victim victim1("Noah");
 		Peon nani("Nani");
+		std::cout << "--------------fin - constructors--------------" << std::endl;
 
 		std::cout << perso1 << victim1 << nani;
 		perso1.polymorph(victim1);
@@ -21,6 +22,7 @@ int main()
 	}
 	{
 		std::cout << COLOR_TWO << "------------test2----------------" << COLOR_NO << std::endl;
+		std::cout << "--------------constructors--------------" << std::endl;
 		Victim *victim1;
 		victim1 = new Peon("Nani");
 		std::cout << "--------------destructors--------------" << std::endl;
