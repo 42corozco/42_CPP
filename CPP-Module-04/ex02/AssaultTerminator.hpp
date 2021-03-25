@@ -12,7 +12,7 @@ class	AssaultTerminator : public ISpaceMarine
 	AssaultTerminator();
 	AssaultTerminator( AssaultTerminator const & obj );
 	AssaultTerminator&	operator=( AssaultTerminator const & rhs);
-	~AssaultTerminator();
+	virtual ~AssaultTerminator();
 
 	ISpaceMarine	*clone(void) const;
 	virtual void	battleCry(void) const;

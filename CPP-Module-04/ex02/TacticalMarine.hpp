@@ -12,7 +12,7 @@ class	TacticalMarine : public ISpaceMarine
 	TacticalMarine();
 	TacticalMarine( TacticalMarine const & obj );
 	TacticalMarine&	operator=( TacticalMarine const & rhs);
-	~TacticalMarine();
+	virtual ~TacticalMarine();
 
 	ISpaceMarine	*clone(void) const;
 	virtual void	battleCry(void) const;

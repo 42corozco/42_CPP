@@ -14,7 +14,7 @@ class	Squad : public ISquad
 	Squad();
 	Squad( Squad const & obj );
 	Squad&	operator=( Squad const & rhs);
-	~Squad();
+	virtual ~Squad();
 
 	virtual int				getCount() const;
 	virtual ISpaceMarine*	getUnit(int) const;
@@ -22,7 +22,7 @@ class	Squad : public ISquad
 	protected:
 	private:
 	int				_count;
-	std::vector<ISpaceMarine*>	_unit; //no sirve
+	std::vector<ISpaceMarine*>	_unit;
 };
 
 #endif

@@ -9,7 +9,7 @@ SuperMutant::SuperMutant( SuperMutant const & obj )
 {
 	*this = obj;
 }
-//	SuperMutant( int hp, std::string const & type );
+
 SuperMutant::~SuperMutant()
 {
 	std::cout << "Aaargh..." << std::endl;

@@ -15,7 +15,6 @@ Squad&	Squad::operator=( Squad const & rhs)
 	this->_count = rhs._count;
 	std::vector<ISpaceMarine*> tmp(rhs._unit);
 	this->_unit = tmp;
-	//	this->_unit = rhs._unit;
 	return ( *this );
 }
 
