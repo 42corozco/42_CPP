@@ -29,18 +29,13 @@ void	Conversion::convertToChar() const
 	std::cout << "char: ";
 	int num;
 
-	try
-	{
-		num = std::atoi(this->_number.c_str());
-	}
-	catch (std::exception & e)
-	{
-		if (this->_number.size() > 1)
-			num = -129;
-		else
-			num = static_cast<int>(this->_number[0]);
-	}
-	if (!(num > -129 && num < 128))
+	std::istringstream ( this->_number ) >> num;
+	if (this->_number.size() > 1)
+		num = -129;
+	else
+		num = static_cast<int>(this->_number[0]);
+	if (!std::strncmp(this->_number.c_str(), "nan", 3) \
+		|| !(num > -129 && num < 128))
 		std::cout << "Impossible";
 	else if (std::isprint(static_cast<char>(num)))
 		std::cout << "'" << static_cast<char>(num) << "'";
@@ -69,7 +64,8 @@ void	Conversion::convertToInt() const
 		if (this->_number.size() == 1 && !(this->_number[0] >= '0' && this->_number[0] <= '9'))
 			num = static_cast<int>(this->_number[0]);
 		else
-			num = std::atoi(static_cast<const char*>(this->_number.c_str()));
+			std::istringstream ( this->_number ) >> num;
+		//	num = std::atoi(static_cast<const char*>(this->_number.c_str()));
 		std::cout << num;
 	}
 	catch (std::exception & e)

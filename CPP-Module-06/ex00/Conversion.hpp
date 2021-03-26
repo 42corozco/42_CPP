@@ -2,10 +2,11 @@
 # define CONVERSION_HPP
 
 # include <string>
+# include <sstream>
 # include <iostream>
-# include <locale>
+//# include <locale>
 # include <cstring>
-# include <cstdlib>
+//# include <cstdlib>
 
 class Conversion
 {
