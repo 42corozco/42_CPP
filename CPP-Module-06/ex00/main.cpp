@@ -1,5 +1,4 @@
-#include <iostream>
-#include <string>
+#include "Conversion.hpp"
 
 int		main(int ac, char **av)
 {
@@ -8,5 +7,12 @@ int		main(int ac, char **av)
 		std::cerr << "Error: argument." << std::endl;
 		return (1);
 	}
+	Conversion ret(av[1]);
+
+	ret.convertToChar();
+	ret.convertToInt();
+	ret.convertToFloat();
+	ret.convertToDouble();
+
 	return (0);
 }
