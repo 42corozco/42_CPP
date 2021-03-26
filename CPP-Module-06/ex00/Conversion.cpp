@@ -31,7 +31,7 @@ void	Conversion::convertToChar() const
 
 	try
 	{
-		num = std::stoi(this->_number);
+		num = std::atoi(this->_number.c_str());
 	}
 	catch (std::exception & e)
 	{
@@ -69,7 +69,7 @@ void	Conversion::convertToInt() const
 		if (this->_number.size() == 1 && !(this->_number[0] >= '0' && this->_number[0] <= '9'))
 			num = static_cast<int>(this->_number[0]);
 		else
-			num = std::stoi(this->_number);
+			num = std::atoi(static_cast<const char*>(this->_number.c_str()));
 		std::cout << num;
 	}
 	catch (std::exception & e)

@@ -4,6 +4,8 @@
 # include <string>
 # include <iostream>
 # include <locale>
+# include <cstring>
+# include <cstdlib>
 
 class Conversion
 {
