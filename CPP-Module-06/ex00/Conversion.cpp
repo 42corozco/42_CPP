@@ -66,13 +66,11 @@ void	Conversion::convertToInt() const
 	}
 	try
 	{
-		if (this->_number.size() == 1)
-			std::cout << static_cast<int>(this->_number[0]);
+		if (this->_number.size() == 1 && !(this->_number[0] >= '0' && this->_number[0] <= '9'))
+			num = static_cast<int>(this->_number[0]);
 		else
-		{
 			num = std::stoi(this->_number);
-			std::cout << num;
-		}
+		std::cout << num;
 	}
 	catch (std::exception & e)
 	{
