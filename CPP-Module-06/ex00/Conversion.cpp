@@ -51,21 +51,48 @@ void	Conversion::convertToChar() const
 
 void	Conversion::convertToInt() const
 {
+	int	num(0);
+
 	std::cout << "int: ";
-	if (this->_number == "nan")
-		std::cout << "Impossible" << std::endl;
+	if (!std::strncmp(this->_number.c_str(), "inf", 3) || !std::strncmp(this->_number.c_str(), "+inf", 4))
+	{
+		std::cout << "inf" << std::endl;
+		return ;
+	}
+	else if (!std::strncmp(this->_number.c_str(), "-inf", 4))
+	{
+		std::cout << "-inf" << std::endl;
+		return ;
+	}
+	try
+	{
+		if (this->_number.size() == 1)
+			std::cout << static_cast<int>(this->_number[0]);
+		else
+		{
+			num = std::stoi(this->_number);
+			std::cout << num;
+		}
+	}
+	catch (std::exception & e)
+	{
+		std::cout << "Impossible";
+	}
+	std::cout << std::endl;
 }
 
 void	Conversion::convertToFloat() const
 {
 	std::cout << "float: ";
 	if (this->_number == "nan")
-		std::cout << "nanf" << std::endl;
+		std::cout << "nanf";
+	std::cout << std::endl;
 }
 
 void	Conversion::convertToDouble() const
 {
 	std::cout << "double: ";
 	if (this->_number == "nan")
-		std::cout << "nan" << std::endl;
+		std::cout << "nan";
+	std::cout << std::endl;
 }
