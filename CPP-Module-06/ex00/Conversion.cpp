@@ -30,7 +30,6 @@ void	Conversion::convertToChar() const
 	int num;
 
 	std::istringstream ( this->_number ) >> num;
-	std::cout << "nani==================" << num << std::endl;
 	if (this->_number.size() > 1)
 		num = -129;
 	else
@@ -67,6 +66,7 @@ void	Conversion::convertToInt() const
 	}
 	try
 	{
+		//num = static_cast<int>(this->_number[0]);
 		if (this->_number.size() == 1 && !(this->_number[0] >= '0' && this->_number[0] <= '9'))
 			num = static_cast<int>(this->_number[0]);
 		else
