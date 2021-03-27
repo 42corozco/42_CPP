@@ -6,6 +6,7 @@
 # include <iostream>
 //# include <locale>
 # include <cstring>
+# include <iomanip>
 //# include <cstdlib>
 
 class Conversion

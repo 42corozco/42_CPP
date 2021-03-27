@@ -66,7 +66,7 @@ void	Conversion::convertToInt() const
 		return ;
 	}
 	else if ((this->_number.size() > 1 && num == 0) \
-	|| !std::strncmp(this->_number.c_str(), "nan", 3))
+			|| !std::strncmp(this->_number.c_str(), "nan", 3))
 	{
 		std::cout << "Impossible" << std::endl;
 		return ;
@@ -79,15 +79,61 @@ void	Conversion::convertToInt() const
 void	Conversion::convertToFloat() const
 {
 	std::cout << "float: ";
-	if (this->_number == "nan")
-		std::cout << "nanf";
-	std::cout << std::endl;
+	float     num(0.0f);
+
+	std::istringstream ( this->_number ) >> num;
+	if (!std::strncmp(this->_number.c_str(), "inf", 3) || !std::strncmp(this->_number.c_str(), "+inf", 4))
+	{
+		std::cout << "inff" << std::endl;
+		return ;
+	}
+	else if (!std::strncmp(this->_number.c_str(), "-inf", 4))
+	{
+		std::cout << "-inff" << std::endl;
+		return ;
+	}
+	else if (!std::strncmp(this->_number.c_str(), "nan", 3))
+	{
+		std::cout << "nanf" << std::endl;
+		return ;
+	}
+	else if (this->_number.size() > 1 && num == 0)
+	{
+		std::cout << "Impossible" << std::endl;
+		return ;
+	}
+	else if (this->_number.size() == 1 && !(this->_number[0] >= '0' && this->_number[0] <= '9'))
+		num = static_cast<float>(this->_number[0]);
+	std::cout << std::setprecision(1) << std::fixed << num << "f" << std::endl;
 }
 
 void	Conversion::convertToDouble() const
 {
 	std::cout << "double: ";
-	if (this->_number == "nan")
-		std::cout << "nan";
-	std::cout << std::endl;
+	double		num(0.0);
+
+	std::istringstream ( this->_number ) >> num;
+	if (!std::strncmp(this->_number.c_str(), "inf", 3) || !std::strncmp(this->_number.c_str(), "+inf", 4))
+	{
+		std::cout << "inf" << std::endl;
+		return ;
+	}
+	else if (!std::strncmp(this->_number.c_str(), "-inf", 4))
+	{
+		std::cout << "-inf" << std::endl;
+		return ;
+	}
+	else if (!std::strncmp(this->_number.c_str(), "nan", 3))
+	{
+		std::cout << "nan" << std::endl;
+		return ;
+	}
+	else if (this->_number.size() > 1 && num == 0)
+	{
+		std::cout << "Impossible" << std::endl;
+		return ;
+	}
+	else if (this->_number.size() == 1 && !(this->_number[0] >= '0' && this->_number[0] <= '9'))
+		num = static_cast<double>(this->_number[0]);
+	std::cout << std::setprecision(1) << std::fixed << num << std::endl;
 }
