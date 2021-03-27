@@ -30,10 +30,16 @@ void	Conversion::convertToChar() const
 	int num;
 
 	std::istringstream ( this->_number ) >> num;
+	std::cout << "nani==================" << num << std::endl;
 	if (this->_number.size() > 1)
 		num = -129;
 	else
-		num = static_cast<int>(this->_number[0]);
+	{
+		if (this->_number[0] >= '0' && this->_number[0] <= '9')
+			num = 0;
+		else
+			num = static_cast<int>(this->_number[0]);
+	}
 	if (!std::strncmp(this->_number.c_str(), "nan", 3) \
 		|| !(num > -129 && num < 128))
 		std::cout << "Impossible";
