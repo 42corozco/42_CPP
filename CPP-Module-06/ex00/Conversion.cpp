@@ -6,7 +6,14 @@ Conversion::Conversion()
 
 Conversion::Conversion(std::string number) : _number(number)
 {
-	//arreglar el 000000000
+	int cont(0);
+
+	for (int i = 0; this->_number[i]; i++)
+	{
+		this->_number[i] == '0' ? cont++ : 0;
+	}
+	std::cout << "nani===" << cont << std::endl;
+
 }
 
 Conversion::Conversion( const Conversion & obj )
