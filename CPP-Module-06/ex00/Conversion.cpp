@@ -59,7 +59,7 @@ void	Conversion::convertToInt() const
 
 	std::cout << "int: ";
 	std::istringstream ( this->_number ) >> num;
-	if (!std::strncmp(this->_number.c_str(), "inf", 3) || !std::strncmp(this->_number.c_str(), "+inf", 4))
+	/*if (!std::strncmp(this->_number.c_str(), "inf", 3) || !std::strncmp(this->_number.c_str(), "+inf", 4))
 	{
 		std::cout << "inf" << std::endl;
 		return ;
@@ -70,6 +70,8 @@ void	Conversion::convertToInt() const
 		return ;
 	}
 	else if ((this->_number.size() > 1 && num == 0) \
+	*/
+	if ((this->_number.size() > 1 && num == 0) \
 			|| !std::strncmp(this->_number.c_str(), "nan", 3))
 	{
 		std::cout << "Impossible" << std::endl;
