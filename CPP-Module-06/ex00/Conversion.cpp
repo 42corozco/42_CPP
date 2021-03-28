@@ -6,6 +6,7 @@ Conversion::Conversion()
 
 Conversion::Conversion(std::string number) : _number(number)
 {
+	//arreglar el 000000000
 }
 
 Conversion::Conversion( const Conversion & obj )
@@ -30,22 +31,25 @@ void	Conversion::convertToChar() const
 	int num;
 
 	std::istringstream ( this->_number ) >> num;
-	if (this->_number.size() > 1)
-		num = -129;
+
+	if (num < -128 || num > 127)
+		std::cout << "Impossible";
 	else
 	{
-		if (this->_number[0] >= '0' && this->_number[0] <= '9')
-			num = 0;
+		if ((num > 31 && num < 127) || this->_number.size() == 1)
+		{
+			if (this->_number.size() == 1 && this->_number[0] >= '0' && this->_number[0] <= '9')
+				std::cout << "Non displayable";
+			else if (this->_number.size() ==  1 && std::isprint(this->_number[0]))
+				std::cout << "'" << this->_number[0] << "'";
+			else
+				std::cout << "'" << static_cast<char>(num) << "'";
+		}
+		else if (num == 0 && _number.size() > 1)
+			std::cout << "Impossible";
 		else
-			num = static_cast<int>(this->_number[0]);
+			std::cout << "Non displayable";
 	}
-	if (!std::strncmp(this->_number.c_str(), "nan", 3) \
-			|| !(num > -129 && num < 128))
-		std::cout << "Impossible";
-	else if (std::isprint(static_cast<char>(num)))
-		std::cout << "'" << static_cast<char>(num) << "'";
-	else
-		std::cout << "Non displayable";
 	std::cout << std::endl;
 }
 
