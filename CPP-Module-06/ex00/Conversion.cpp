@@ -6,13 +6,16 @@ Conversion::Conversion()
 
 Conversion::Conversion(std::string number) : _number(number)
 {
-	int cont(0);
+	unsigned long cont(0);
 
 	for (int i = 0; this->_number[i]; i++)
 	{
 		this->_number[i] == '0' ? cont++ : 0;
 	}
-	std::cout << "nani===" << cont << std::endl;
+	if (this->_number.size() == cont)
+		this->_number = this->_number.substr(cont -1, cont);
+	else if (cont < this->_number.size())
+		this->_number = this->_number.substr(cont, this->_number.size());
 
 }
 
