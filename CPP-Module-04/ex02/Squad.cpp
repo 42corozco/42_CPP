@@ -1,7 +1,7 @@
 #include "Squad.hpp"
 #include <algorithm>
 
-Squad::Squad() : _count(0)
+Squad::Squad() : _count(0), _unit(NULL)
 {
 }
 
@@ -13,19 +13,13 @@ Squad::Squad( Squad const & obj )
 Squad&	Squad::operator=( Squad const & rhs)
 {
 	this->_count = rhs._count;
-	std::vector<ISpaceMarine*> tmp(rhs._unit);
-	this->_unit = tmp;
+	this->_unit = rhs._unit;
 	return ( *this );
 }
 
 Squad::~Squad()
 {
-	for (int i = 0; i < (int)_unit.size(); i++)
-	{
-		this->_count--;
-		delete (_unit[i]);
-	}
-	_unit.clear();
+	delete this->_unit;
 }
 
 int		Squad::getCount() const
@@ -35,14 +29,32 @@ int		Squad::getCount() const
 
 ISpaceMarine*	Squad::getUnit(int i) const
 {
-	if (i < (int)_unit.size())
-		return (_unit[i]);
+	if (i < this->_count)
+		return (this->_unit[i]);
 	return (NULL);
 }
 
 int		Squad::push(ISpaceMarine* obj)
 {
-	_unit.push_back(obj);
 	this->_count++;
-	return ((int)this->_unit.size());
+	ISpaceMarine	**tmp = new ISpaceMarine*[this->_count]; 
+
+	if (this->_unit != NULL)
+	{
+		int i = 0;
+		while (i < this->_count - 1)
+		{
+			tmp[i] = this->_unit[i]; 
+			i++;
+		}
+		tmp[i] = obj;
+		this->_unit = tmp;
+	}
+	else
+	{
+		tmp[0] = obj;
+		this->_unit = tmp;
+	}
+	return (this->_count);
+
 }

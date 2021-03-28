@@ -34,7 +34,7 @@ std::string	Victim::getName(void) const
 	return (this->_name);
 };
 
-void		Victim::getPolymorphed(void) const //aun no terminado
+void		Victim::getPolymorphed(void) const
 {
 	std::cout <<this->_name << " has been turned into a cute little sheep!" \
 		<< std::endl;

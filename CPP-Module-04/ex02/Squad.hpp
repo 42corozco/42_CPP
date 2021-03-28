@@ -8,6 +8,11 @@
 # include "ISquad.hpp"
 # include "ISpaceMarine.hpp"
 
+struct Pro {
+	ISpaceMarine	*unitPtr;
+	struct Pro		*next;
+};
+
 class	Squad : public ISquad
 {
 	public:
@@ -22,7 +27,9 @@ class	Squad : public ISquad
 	protected:
 	private:
 	int				_count;
-	std::vector<ISpaceMarine*>	_unit;
+	ISpaceMarine	**_unit;
+
+//	std::vector<ISpaceMarine*>	_unit;
 };
 
 #endif
