@@ -6,6 +6,7 @@ Conversion::Conversion()
 
 Conversion::Conversion(std::string number) : _number(number)
 {
+	//arreglar el 000000000
 }
 
 Conversion::Conversion( const Conversion & obj )
