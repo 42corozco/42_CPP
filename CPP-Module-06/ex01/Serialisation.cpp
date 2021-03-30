@@ -12,12 +12,25 @@ struct	Data
 
 void	*serialize(void)
 {
+	Data *seri = new Data();
+	std::string tmp= "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789abcdefghijklmnopqrstuvwxy";
 
+	for (int i = 0; i < 8; i++)
+		seri->s1 += tmp[rand() % 61];
+	seri->n = rand() % 100000;
+	for (int i = 0; i < 8; i++)
+		seri->s2 += tmp[rand() % 61];
+
+	std::cout << "serialized: " << seri->s1 << std::endl;
+	std::cout << "serialized: " << seri->n << std::endl;
+	std::cout << "serialized: " << seri->s2 << std::endl;
+	return (reinterpret_cast<void *>(seri));
+//	return (seri); //marche aussi
 }
 
 Data	*deserialize(void * raw)
 {
-
+	return reinterpret_cast<Data *>(raw);
 }
 
 int		main(void)
