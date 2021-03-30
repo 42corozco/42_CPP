@@ -1,4 +1,4 @@
-NAME = ex01
+NAME = ex02
 HEAD := -I./
 CP = clang++
 
@@ -7,7 +7,9 @@ CFLAGS = -Wall -Wextra -Werror -std=c++98
 CFLAGSF = -g3 -fsanitize=address -Wall -Wextra -Werror
 
 SRC := \
-	Serialisation.cpp
+	Base.cpp \
+	main.cpp
+	
 
 OBJS = $(addprefix objs/, $(SRC:.cpp=.o))
 #color
