@@ -8,15 +8,14 @@ Conversion::Conversion(std::string number) : _number(number)
 {
 	unsigned long cont(0);
 
-	for (int i = 0; this->_number[i]; i++)
+	for (int i = 0; this->_number[i] && this->_number[i] == '0'; i++)
 	{
 		this->_number[i] == '0' ? cont++ : 0;
 	}
-	if (this->_number.size() == cont)
+	if (cont && this->_number.size() == cont)
 		this->_number = this->_number.substr(cont -1, cont);
-	else if (cont < this->_number.size())
+	else if (cont && cont < this->_number.size())
 		this->_number = this->_number.substr(cont, this->_number.size());
-
 }
 
 Conversion::Conversion( const Conversion & obj )
@@ -26,7 +25,7 @@ Conversion::Conversion( const Conversion & obj )
 
 Conversion & Conversion::operator=( const Conversion & obj )
 {
-	(void)obj; // Esto toca arreglarlo.
+	this->_number = obj._number;
 	return ( *this );
 }
 
