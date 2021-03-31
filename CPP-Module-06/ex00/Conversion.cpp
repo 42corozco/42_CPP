@@ -97,17 +97,18 @@ void	Conversion::convertToFloat() const
 	float     num(0.0f);
 
 	std::istringstream ( this->_number ) >> num;
-	if (!std::strncmp(this->_number.c_str(), "inf", 3) || !std::strncmp(this->_number.c_str(), "+inf", 4))
+	if (!std::strcmp(this->_number.c_str(), "inf") || !std::strcmp(this->_number.c_str(), "+inf") \
+	|| !std::strcmp(this->_number.c_str(), "inff") || !std::strcmp(this->_number.c_str(), "+inff"))
 	{
 		std::cout << "inff" << std::endl;
 		return ;
 	}
-	else if (!std::strncmp(this->_number.c_str(), "-inf", 4))
+	else if (!std::strcmp(this->_number.c_str(), "-inf") || !std::strcmp(this->_number.c_str(), "-inff"))
 	{
 		std::cout << "-inff" << std::endl;
 		return ;
 	}
-	else if (!std::strncmp(this->_number.c_str(), "nan", 3))
+	else if (!std::strcmp(this->_number.c_str(), "nan") || !std::strcmp(this->_number.c_str(), "nanf"))
 	{
 		std::cout << "nanf" << std::endl;
 		return ;
@@ -128,17 +129,18 @@ void	Conversion::convertToDouble() const
 	double		num(0.0);
 
 	std::istringstream ( this->_number ) >> num;
-	if (!std::strncmp(this->_number.c_str(), "inf", 3) || !std::strncmp(this->_number.c_str(), "+inf", 4))
+	if (!std::strcmp(this->_number.c_str(), "inf") || !std::strcmp(this->_number.c_str(), "+inf") \
+	|| !std::strcmp(this->_number.c_str(), "inff") || !std::strcmp(this->_number.c_str(), "+inff"))
 	{
 		std::cout << "inf" << std::endl;
 		return ;
 	}
-	else if (!std::strncmp(this->_number.c_str(), "-inf", 4))
+	else if (!std::strcmp(this->_number.c_str(), "-inf") || !std::strcmp(this->_number.c_str(), "-inff"))
 	{
 		std::cout << "-inf" << std::endl;
 		return ;
 	}
-	else if (!std::strncmp(this->_number.c_str(), "nan", 3))
+	else if (!std::strcmp(this->_number.c_str(), "nan") || !std::strcmp(this->_number.c_str(), "nanf"))
 	{
 		std::cout << "nan" << std::endl;
 		return ;
