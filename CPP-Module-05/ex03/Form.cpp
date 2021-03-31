@@ -92,8 +92,8 @@ void				Form::setSigned(bool i)
 std::ostream &	operator<<( std::ostream & o, Form const & i )
 {
 	o << "Form: " <<i.getName() << " |Signed: " << i.getSigned() \
-		<< " |Grade requirend to sing: "<< i.getGradeSig() \
-		<< " |Grade requirend to execute: "<< i.getGradeExe() << ".";
+		<< " |Grade required to sign: "<< i.getGradeSig() \
+		<< " |Grade required to execute: "<< i.getGradeExe() << ".";
 	return ( o );
 }
 
