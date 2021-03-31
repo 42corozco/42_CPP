@@ -9,6 +9,7 @@ class	A : public Base
 {
 	public:
 	virtual ~A();
+	void	i_am() const;
 };
 
 #endif

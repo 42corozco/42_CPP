@@ -7,6 +7,9 @@ CFLAGS = -Wall -Wextra -Werror -std=c++98
 CFLAGSF = -g3 -fsanitize=address -Wall -Wextra -Werror
 
 SRC := \
+	A.cpp \
+	B.cpp \
+	C.cpp \
 	Base.cpp \
 	main.cpp
 	

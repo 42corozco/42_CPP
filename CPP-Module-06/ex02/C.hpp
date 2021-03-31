@@ -5,10 +5,13 @@
 #include <string>
 #include "Base.hpp"
 
+class	Base;
+
 class	C : public Base
 {
 	public:
 	virtual ~C();
+	void	i_am() const;
 };
 
 #endif
