@@ -31,7 +31,7 @@ class Array
 			if ( this->_Array )
 				delete [] this->_Array;
 			this->_Array = new T[this->_n];
-			for (int i = 0; i < this->_n; i++)
+			for (unsigned int i = 0; i < this->_n; i++)
 				this->_Array[i] = obj[i];
 			return ( *this );
 		}
@@ -40,9 +40,10 @@ class Array
 		{
 			if ( this->_Array )
 				delete [] this->_Array;
+			std::cout << "destructor" << std::endl;
 		}
 
-		T & operator[](int index)
+		T & operator[](unsigned int index)
 		{
 			if (index >= this->_n)
 				throw std::exception(); 
@@ -50,9 +51,7 @@ class Array
 			return (this->_Array[index]);
 		}
 		
-
 		unsigned int	size() const { return ( this->_n ); }
-
 
 	protected:
 	private:
