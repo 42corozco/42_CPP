@@ -8,15 +8,19 @@ class Span
 {
 	public:
 	Span(unsigned int n);
-	void	addNumber(int number);
-	int shortestSpan() const;
-	int longestSpan() const;
+	Span(const Span & obj);
+	Span& operator=(const Span & obj);
+	~Span();
 
+	void	addNumber(int number);
+//	int shortestSpan() const;
+//	int longestSpan() const;
+
+	std::vector<int> _tab;
 	protected:
 	private:
-	Span();
+	Span() {}
 	unsigned int _n;
-	std::vector<int> tab;
 };
 
 #endif
