@@ -24,7 +24,6 @@ class Span
 	private:
 	Span() {}
 	unsigned int _n;
-	unsigned int _size;
 	std::vector<int> _tab;
 };
 

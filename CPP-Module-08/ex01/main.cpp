@@ -16,8 +16,8 @@ int	main()
 		sp.addNumber(17);
 		sp.addNumber(9);
 		sp.addNumber(11);
-		std::cout << sp.shortestSpan() << std::endl;
-		std::cout << sp.longestSpan() << std::endl;
+		std::cout << "shortestSpan: " << sp.shortestSpan() << std::endl;
+		std::cout << "longestSpan: " << sp.longestSpan() << std::endl;
 	}
 	{
 		std::cout << COLOR_TWO << "------------test2----------------" << COLOR_NO << std::endl;
@@ -50,6 +50,19 @@ int	main()
 		{
 			std::cout << e.what() << std::endl;
 		}
+	}
+	{
+		std::cout << COLOR_TWO << "------------test4----------------" << COLOR_NO << std::endl;
+		std::cout << "Test -> op\n" << std::endl;
+		Span sp = Span(10);
+		sp.addNumber(-1);
+		sp.addNumber(2);
+		sp.addNumber(50);
+		sp.addNumber(5);
+		sp.addNumber(1000);
+		sp.addNumber(1005);
+		std::cout << "shortestSpan: " << sp.shortestSpan() << std::endl;
+		std::cout << "longestSpan: " << sp.longestSpan() << std::endl;
 	}
 	return (0);
 }
