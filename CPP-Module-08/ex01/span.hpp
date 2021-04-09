@@ -13,14 +13,19 @@ class Span
 	~Span();
 
 	void	addNumber(int number);
-//	int shortestSpan() const;
-//	int longestSpan() const;
+	int shortestSpan() const;
+	int longestSpan() const;
 
-	std::vector<int> _tab;
+	/*++*/
+	void	print_sp() const;
+	unsigned int getSize() const;
+
 	protected:
 	private:
 	Span() {}
 	unsigned int _n;
+	unsigned int _size;
+	std::vector<int> _tab;
 };
 
 #endif
