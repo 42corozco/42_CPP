@@ -4,8 +4,6 @@
 #define color_two	"\033[33m"
 #define color_no	"\033[0m"
 
-
-
 int		main()
 {
 	MutantStack<int>	mstack;
