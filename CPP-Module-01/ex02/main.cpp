@@ -12,6 +12,9 @@
 
 #include "Zombie.hpp"
 #include "ZombieEvent.hpp"
+#include <ctime>
+#include <cstdlib>
+
 
 int	main(void)
 {
