@@ -1,6 +1,6 @@
 #include <string>
-#include <time.h>
-#include <stdlib.h>
+#include <ctime>
+#include <cstdlib>
 #include <iostream>
 
 struct	Data
@@ -25,7 +25,6 @@ void	*serialize(void)
 	std::cout << "serialized: " << seri->n << std::endl;
 	std::cout << "serialized: " << seri->s2 << std::endl;
 	return (reinterpret_cast<void *>(seri));
-//	return (seri); //marche aussi
 }
 
 Data	*deserialize(void * raw)
