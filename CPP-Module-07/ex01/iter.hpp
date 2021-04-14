@@ -5,7 +5,7 @@
 # include <string>
 
 template < typename T>
-void	iter( T * tab, T const & i, void f(T const &tab) )
+void	iter( T * tab, int i, void f(T const &tab) )
 {
 	for (int k = 0; k < i; k++)
 		f(tab[k]);
