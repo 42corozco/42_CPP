@@ -4,6 +4,19 @@
 #define COLOR_TWO	"\033[33m"
 #define COLOR_NO	"\033[0m"
 
+class Test
+{
+	public:
+		Test() : _n(35) {return;}
+		int		getN() const {return (this->_n);}
+		void	setN(int n) {this->_n = n;}
+
+	private:
+		int _n;
+};
+
+std::ostream & operator<<( std::ostream & o, Test const & rhs ) { o << rhs.getN(); return o; }
+
 int main(void)
 {
 	{
@@ -53,6 +66,35 @@ int main(void)
 			std::cout << e.what() << " Size limite: " << test.size() << std::endl;
 		}
 	}
+	{
+		std::cout << COLOR_TWO << "------------test4----------------" << COLOR_NO << std::endl;
+		Array<std::string> test(10);
 
+		test[0] = "Hola";
+		test[1] = " como";
+		test[2] = " estas";
+		test[9] = " nani1";
+		test[4] = " nani2";
+		for (unsigned int i = 0; i < test.size(); i++)
+			std::cout << test[i];
+		std::cout << std::endl;
+	}
+	{
+		std::cout << COLOR_TWO << "------------class----------------" << COLOR_NO << std::endl;
+		Array<Test> test(3);
+		test[1].setN(42);
+		test[2].setN(55);
+
+		for (unsigned int i = 0; i < test.size(); i++)
+			std::cout << test[i] << std::endl;
+		try
+		{
+			test[4].setN(55);
+		}
+		catch (std::exception & e)
+		{
+			std::cout << e.what() << " Size limite: " << test.size() << std::endl;
+		}
+	}
 	return (0);
 }
