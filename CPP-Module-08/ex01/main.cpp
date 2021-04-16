@@ -6,6 +6,7 @@
 
 int	main()
 {
+	srand(time(NULL));
 	{
 		std::cout << COLOR_TWO << "------------test1----------------" << COLOR_NO << std::endl;
 		std::cout << "Test -> original\n" << std::endl;
@@ -22,13 +23,12 @@ int	main()
 	{
 		std::cout << COLOR_TWO << "------------test2----------------" << COLOR_NO << std::endl;
 		std::cout << "Test -> exception\n" << std::endl;
-		Span sp = Span(3);
+		Span sp = Span(8);
 
-		sp.addNumber(5);
-		sp.addNumber(3);
-		sp.addNumber(17);
-
+		sp.addRamdonNumber();
 		sp.print_sp();
+		std::cout << "shortestSpan: " << sp.shortestSpan() << std::endl;
+		std::cout << "longestSpan: " << sp.longestSpan() << std::endl;
 		try
 		{
 			sp.addNumber(11);

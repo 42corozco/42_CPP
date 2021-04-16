@@ -32,6 +32,15 @@ void	Span::addNumber(int number)
 	this->_n--;
 }
 
+void	Span::addRamdonNumber()
+{
+	for (unsigned int i = 0; i <= this->_n ; i++)
+	{
+		this->_tab.push_back(rand() % 100000);
+	}
+	this->_n = 0;
+}
+
 int Span::shortestSpan() const
 {
 	if (this->_tab.size() < 2)

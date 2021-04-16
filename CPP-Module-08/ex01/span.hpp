@@ -12,6 +12,7 @@ class Span
 	Span& operator=(const Span & obj);
 	~Span();
 
+	Span(std::vector<int>);
 	void	addNumber(int number);
 	int shortestSpan() const;
 	int longestSpan() const;
@@ -19,6 +20,7 @@ class Span
 	/*++*/
 	void	print_sp() const;
 	unsigned int getSize() const;
+	void	addRamdonNumber();
 
 	protected:
 	private:
